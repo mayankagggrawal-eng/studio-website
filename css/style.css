@@ -637,6 +637,12 @@ html {
 }
 .hero {
   animation: zoomIn 8s ease-in-out infinite alternate;
+}@media (max-width:768px){
+
+  .hero{
+    animation:none;
+  }
+
 }
 
 @keyframes zoomIn {
@@ -1118,7 +1124,7 @@ color:var(--gold);
 .footer-bottom{
 
 text-align:center;
-
+  
 margin-top:40px;
 
 padding-top:20px;
@@ -1126,5 +1132,40 @@ padding-top:20px;
 border-top:1px solid rgba(255,255,255,0.1);
 
 color:#999;
+
+}html, body {
+  width: 100%;
+  overflow-x: hidden;
+}@media (max-width:768px){
+
+  .portfolio-scroll{
+    width:100%;
+    overflow:hidden;
+  }
+
+  .portfolio-track{
+    gap:10px;
+  }
+
+  .portfolio-item{
+    min-width:220px;
+    width:220px;
+    height:280px;
+  }
+
+  .header{
+    padding:10px;
+  }
+
+  .logo-text{
+    font-size:14px;
+  }
+
+  .navbar{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+  }
 
 }
