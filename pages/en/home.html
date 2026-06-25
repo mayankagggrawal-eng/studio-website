@@ -546,7 +546,34 @@ Professional photography and videography services in Boisar and surrounding area
 </footer>
 
 <script src="../../js/language.js"></script>
+<script>
 
+// Right click disable
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
+// Image drag disable
+document.querySelectorAll('img').forEach(function(img) {
+    img.setAttribute('draggable', 'false');
+});
+
+// Common shortcut disable
+document.addEventListener('keydown', function(e) {
+
+    if (
+        e.key === 'F12' ||
+        (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+        (e.ctrlKey && e.shiftKey && e.key === 'J') ||
+        (e.ctrlKey && e.key === 'U') ||
+        (e.ctrlKey && e.key === 'S')
+    ) {
+        e.preventDefault();
+    }
+
+});
+
+</script>
 </body>
 
 </html>
