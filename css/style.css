@@ -3011,3 +3011,19 @@ body.menu-open{
   }
 
 }
+@media (max-width: 768px) {
+
+  #wedding,
+  #prewedding,
+  #events {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+  }
+
+  .gallery-section {
+    overflow: visible !important;
+  }
+
+}
