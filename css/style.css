@@ -2987,3 +2987,27 @@ body.menu-open{
     overflow: hidden;
   }
 }
+/* FIX: Wedding / Event internal gallery mobile visibility */
+@media (max-width: 768px){
+
+  .wedding-gallery .gallery-grid,
+  .masonry-grid{
+      column-count: 1 !important;
+      display: block !important;
+  }
+
+  .gallery-item,
+  .masonry-item{
+      display: block;
+      width: 100%;
+      margin-bottom: 18px;
+  }
+
+  .gallery-item img,
+  .masonry-item img{
+      width: 100%;
+      height: auto !important;
+      display: block;
+  }
+
+}
