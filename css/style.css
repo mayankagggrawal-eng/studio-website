@@ -2966,7 +2966,8 @@ body.menu-open{
     position: fixed;
     top: 0;
     right: -100%;
-    width: 300px;
+   width:72%;
+max-width:320px;
     height: 100vh;
     background: rgba(8,8,8,.95);
     flex-direction: column;
