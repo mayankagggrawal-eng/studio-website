@@ -158,21 +158,13 @@ function openGallery(key) {
 /* ===============================
    PREMIUM LOADER
 ================================ */
-
 window.addEventListener("load", () => {
 
-    const loader = document.getElementById("loader");
-
-    if (!loader) return;
-
-    const minimumTime = 1200;
-
     setTimeout(() => {
-        loader.classList.add("hide");
-    }, minimumTime);
+        document.getElementById("loader").classList.add("hide");
+    }, 3000);
 
 });
-
 
 /* ===============================
    DOM READY
