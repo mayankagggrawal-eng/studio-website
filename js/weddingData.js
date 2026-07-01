@@ -300,19 +300,19 @@ window.galleryData = [
 },
 {
   category: "Reception Shoot",
-  image: "../../assets/services/Wedding/reception/01 (7).jpg"
+  image: "../../assets/services/wedding/reception/01 (7).jpg"
 },
 {
   category: "Reception Shoot",
-  image: "../../assets/services/Wedding/reception/01 (8).jpg"
+  image: "../../assets/services/wedding/reception/01 (8).jpg"
 },
 {
   category: "Reception Shoot",
-  image: "../../assets/services/Wedding/reception/01 (9).jpg"
+  image: "../../assets/services/wedding/reception/01 (9).jpg"
 },
 {
   category: "Reception Shoot",
-  image: "../../assets/services/Wedding/reception/01 (10).jpg"
+  image: "../../assets/services/wedding/reception/01 (10).jpg"
 },
 
 
