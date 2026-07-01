@@ -12,55 +12,55 @@ window.galleryData = [
 },
 {
   category: "mehendi Shoot",
-  image: "../../assets/services/pre-Wedding/mehendi/01 (2).jpg"
+  image: "../../assets/services/pre-Wedding/mehendi/01(2).jpg"
 },
 {
   category: "mehendi Shoot",
-  image: "../../assets/services/pre-Wedding/mehendi/01 (3).jpg"
+  image: "../../assets/services/pre-Wedding/mehendi/01(3).jpg"
 },
 {
   category: "mehendi Shoot",
-  image: "../../assets/services/pre-Wedding/mehendi/01 (4).jpg"
+  image: "../../assets/services/pre-Wedding/mehendi/01(4).jpg"
 },
 {
   category: "mehendi Shoot",
-  image: "../../assets/services/pre-Wedding/mehendi/01 (5).jpg"
+  image: "../../assets/services/pre-Wedding/mehendi/01(5).jpg"
 },
 {
   category: "mehendi Shoot",
-  image: "../../assets/services/pre-Wedding/mehendi/01 (6).jpg"
+  image: "../../assets/services/pre-Wedding/mehendi/01(6).jpg"
 },
 {
   category: "mehendi Shoot",
-  image: "../../assets/services/pre-Wedding/mehendi/01 (7).jpg"
+  image: "../../assets/services/pre-Wedding/mehendi/01(7).jpg"
 },
 {
   category: "mehendi Shoot",
-  image: "../../assets/services/pre-Wedding/mehendi/01 (8).jpg"
+  image: "../../assets/services/pre-Wedding/mehendi/01(8).jpg"
 },
 {
   category: "mehendi Shoot",
-  image: "../../assets/services/pre-Wedding/mehendi/01 (9).jpg"
+  image: "../../assets/services/pre-Wedding/mehendi/01(9).jpg"
 },
 {
   category: "mehendi Shoot",
-  image: "../../assets/services/pre-Wedding/mehendi/01 (10).jpg"
+  image: "../../assets/services/pre-Wedding/mehendi/01(10).jpg"
 },
 {
   category: "mehendi Shoot",
-  image: "../../assets/services/pre-Wedding/mehendi/01 (11).jpg"
+  image: "../../assets/services/pre-Wedding/mehendi/01(11).jpg"
 },
 {
   category: "mehendi Shoot",
-  image: "../../assets/services/pre-Wedding/mehendi/01 (12).jpg"
+  image: "../../assets/services/pre-Wedding/mehendi/01(12).jpg"
 },
 {
   category: "mehendi Shoot",
-  image: "../../assets/services/pre-Wedding/mehendi/01 (13).jpg"
+  image: "../../assets/services/pre-Wedding/mehendi/01(13).jpg"
 },
 {
   category: "mehendi Shoot",
-  image: "../../assets/services/pre-Wedding/mehendi/01 (14).jpg"
+  image: "../../assets/services/pre-Wedding/mehendi/01(14).jpg"
 },
 
 
