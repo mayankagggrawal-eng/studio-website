@@ -11,10 +11,17 @@
 
 :root {
   --black: #000000;
-  --gold: #D4AF37;
-  --gold-light: #FFD700;
   --white: #ffffff;
   --gray: #cccccc;
+
+  /* English */
+  --gold: #D4AF37;
+  --gold-light: #FFD700;
+
+  /* Language Colors */
+  --english: #D4AF37;
+  --hindi: #C65D00;
+  --marathi: #8C5A2B;
 }
 
 html {
