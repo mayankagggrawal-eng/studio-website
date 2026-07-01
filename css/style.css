@@ -2935,15 +2935,15 @@ body.menu-open{
   /* ===============================
    MOBILE NAV FIX
 ================================ */
-@media (max-width:500px) {
+@media (max-width:768px) {
 
   .navbar {
     position:fixed ;
     top: 0;
     right: -100%;
 
-    width: 58%;
-    max-width: 250px;
+    width: 28%;
+    max-width: 150px;
     height: 50vh;
 
     display: flex;
