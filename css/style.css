@@ -2950,9 +2950,9 @@ body.menu-open{
     top: 0;
     right: -100%;
 
-    width: 28%;
+    width: 23%;
     max-width: 150px;
-    height: 50vh;
+    height: 30vh;
 
     display: flex;
     flex-direction: column;
