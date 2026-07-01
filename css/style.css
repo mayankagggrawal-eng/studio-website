@@ -2938,8 +2938,8 @@ body.menu-open{
 @media (max-width:500px) {
 
   .navbar {
-    position: ;
-    top: 10;
+    position:fixed ;
+    top: 0;
     right: -100%;
 
     width: 58%;
