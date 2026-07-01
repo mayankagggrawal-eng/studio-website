@@ -101,6 +101,16 @@ img {
   box-shadow: 0 0 20px rgba(212, 175, 55, 0.7);
 }
 
+.language-box{
+    opacity:0;
+    visibility:hidden;
+    transition:.5s;
+}
+
+.language-box.show{
+    opacity:1;
+    visibility:visible;
+}
 /* ----- Header & Navigation ----- */
 .header {
   transition: all 0.35s ease;
@@ -1512,11 +1522,13 @@ img {
   z-index: 99999;
   transition: opacity .10s ease, visibility .10s ease;
 }
+#loader.hide{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+}
 
-#loader.hide {
-  opacity: 0;
-  visibility: hidden;
-}.loader-content {
+.loader-content {
   text-align: center;
 }
 
