@@ -2940,7 +2940,7 @@ body.menu-open{
   .navbar {
     position: fixed;
     top: 0;
-    right: -150%;
+    right: -0%;
 
     width: 68%;
     max-width: 280px;
