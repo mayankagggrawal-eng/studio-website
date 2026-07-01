@@ -2935,7 +2935,7 @@ body.menu-open{
   /* ===============================
    MOBILE NAV FIX
 ================================ */
-@media (max-width:768px) {
+@media (max-width:500px) {
 
   .navbar {
     position: ;
