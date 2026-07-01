@@ -1431,21 +1431,7 @@ img {
     display: flex;
   }
 
-  .navbar {
-    display: none;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background: #111111;
-    flex-direction: column;
-    text-align: center;
-    padding: 15px 0;
-  }
-
-  .navbar.active {
-    display: flex;
-  }
+ 
 
   .navbar a {
     padding: 12px;
