@@ -9,7 +9,7 @@ window.galleryData = [
 
 {
   category: "Bride Shoot",
-  image: "../../assets/services/Wedding/bride/01 (1).JPG"
+  image: "../../assets/services/wedding/bride/01 (1).JPG"
 },
 {
   category: "Bride Shoot",
@@ -85,19 +85,19 @@ window.galleryData = [
 
 {
   category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (1).JPG"
+  image: "../../assets/services/wedding/ceremony/m4.jpg"
 },
 {
   category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (2).JPG"
+  image: "../../assets/services/wedding/ceremony/m5.jpg"
 },
 {
   category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (3).JPG"
+  image: "../../assets/services/wedding/ceremony/m6.jpg"
 },
 {
   category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (4).JPG"
+  image: "../../assets/services/wedding/ceremony/m7.jpg"
 },
 {
   category: "Wedding Shoot",
@@ -117,15 +117,15 @@ window.galleryData = [
 },
 {
   category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (9).JPG"
+  image: "../../assets/services/wedding/ceremony/m3.jpg"
 },
 {
   category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (10).JPG"
+  image: "../../assets/services/wedding/ceremony/m2.jpg"
 },
 {
   category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (11).JPG"
+  image: "../../assets/services/wedding/ceremony/m1.jpg"
 },
 {
   category: "Wedding Shoot",
@@ -241,7 +241,7 @@ window.galleryData = [
 },
 {
   category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (40).JPG"
+  image: "../../assets/services/wedding/ceremony/m.jpg"
 },
 
 
