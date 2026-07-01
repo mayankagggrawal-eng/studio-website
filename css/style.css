@@ -1758,6 +1758,27 @@ img {
     background-attachment:fixed;
 
 }
+.pre-wedding-top{
+
+    position:relative;
+
+    background:url("../assets/services/pre-wedding/p.jpeg")
+    center center/cover no-repeat;
+
+    background-attachment:fixed;
+
+}
+
+.events-top{
+
+    position:relative;
+
+    background:url("../assets/services/Events/t.png")
+    center center/cover no-repeat;
+
+    background-attachment:fixed;
+
+}
 
 .wedding-hero {
   position: relative;
@@ -2248,15 +2269,9 @@ img {
 }
 
 /* IMAGE */
-.pre-wedding-hero img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 
-  z-index: 1;
-}
+
+
 
 /* OVERLAY */
 .pre-wedding-hero .hero-overlay {
@@ -2292,14 +2307,7 @@ img {
   text-align: center;
 }
 
-.event-hero img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-}
+
 
 .event-hero .hero-overlay {
   position: absolute;
