@@ -8,7 +8,7 @@ window.galleryData = [
 
   {
   category: "mehendi Shoot",
-  image: "../../assets/services/pre-Wedding/mehendi/01 (1).jpg"
+  image: "../../assets/services/pre-wedding/mehendi/01(1).jpg"
 },
 {
   category: "mehendi Shoot",
