@@ -53,6 +53,18 @@ img {
   justify-content: center;
   align-items: center;
 }
+.language-box{
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(20px);
+    transition:all .5s ease;
+}
+
+.language-box.show{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
 
 .language-box {
   width: 90%;
