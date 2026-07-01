@@ -1873,14 +1873,16 @@ img {
    WEDDING CATEGORIES
 ========================================================== */
 
-.gallery-categories {
-  padding: 80px 20px;
-  background: #000;
-  text-align: center;
+.gallery-categories{
+    padding: 80px 20px;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 90px;
 
-  margin-top: 0;
-  padding-top: 90px;
+    background: url("../assets/services/wedding/s.jpeg") center center / cover no-repeat;
+    background-attachment: fixed;
 
+    position: relative;
 }
 
 .gallery-categories .section-title {
@@ -1889,6 +1891,12 @@ img {
   margin-bottom: 50px;
 }
 
+.gallery-categories .section-title,
+.gallery-categories .category-grid,
+.gallery-categories .scroll-indicator{
+    position: relative;
+    z-index: 1;
+}
 .category-grid {
   display: flex;
   justify-content: center;
@@ -1929,6 +1937,13 @@ img {
     font-size: 14px;
   }
 
+.gallery-categories::before,
+.wedding-gallery::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+}
   .gallery-categories .section-title {
     font-size: 30px;
   }
@@ -2327,12 +2342,12 @@ img {
 /* ======================================================
    PREMIUM STUDIO GALLERY
 ====================================================== */
-
 .wedding-gallery{
+    position: relative;
+    padding: 90px 5%;
 
-    padding:90px 5%;
-    background:#050505;
-
+    background: url("../assets/services/wedding/s.jpeg") center center / cover no-repeat;
+    background-attachment: fixed;
 }
 
 .gallery-section{
@@ -2986,44 +3001,4 @@ body.menu-open{
   body.menu-open {
     overflow: hidden;
   }
-}
-/* FIX: Wedding / Event internal gallery mobile visibility */
-@media (max-width: 768px){
-
-  .wedding-gallery .gallery-grid,
-  .masonry-grid{
-      column-count: 1 !important;
-      display: block !important;
-  }
-
-  .gallery-item,
-  .masonry-item{
-      display: block;
-      width: 100%;
-      margin-bottom: 18px;
-  }
-
-  .gallery-item img,
-  .masonry-item img{
-      width: 100%;
-      height: auto !important;
-      display: block;
-  }
-
-}
-@media (max-width: 768px) {
-
-  #wedding,
-  #prewedding,
-  #events {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    height: auto !important;
-  }
-
-  .gallery-section {
-    overflow: visible !important;
-  }
-
 }
