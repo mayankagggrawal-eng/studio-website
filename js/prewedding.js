@@ -12,11 +12,11 @@ window.galleryData = [
 },
 {
   category: "mehendi Shoot",
-  image: "../../assets/services/pre-Wedding/mehendi/A.jpg"
+  image: "../../assets/services/pre-Wedding/mehendi/B(2).jpg"
 },
 {
   category: "mehendi Shoot",
-  image: "../../assets/services/pre-Wedding/mehendi/01(3).jpg"
+  image: "../../assets/services/pre-Wedding/mehendi/B(3).jpg"
 },
 {
   category: "mehendi Shoot",
