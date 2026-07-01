@@ -2955,7 +2955,7 @@ body.menu-open{
     height: 30vh;
 
     display: flex;
-    flex-direction: column;
+    direction: column;
 
     padding: 90px 20px;
 
