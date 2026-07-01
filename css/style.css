@@ -2938,7 +2938,7 @@ body.menu-open{
 @media (max-width:768px) {
 
   .navbar {
-    position: fixed;
+    position: ;
     top: 10;
     right: -100%;
 
