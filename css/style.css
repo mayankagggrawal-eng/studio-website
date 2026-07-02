@@ -3055,22 +3055,21 @@ height: calc(100vh - 80px);
     transition:.35s;
   }
 
-  .navbar a:hover{
+.navbar a:hover{
     color:#D4AF37;
-    background:rgba(212,175,55,.10);
-    border-color:rgba(212,175,55,.20);
+    background:transparent;
+    border-color:transparent;
     transform:translateX(8px);
-  }
-
+}
   .navbar a:hover::before{
     height:70%;
   }
 
-  .navbar a.active{
+.navbar a.active{
     color:#D4AF37;
-    background:rgba(212,175,55,.14);
-    border-color:rgba(212,175,55,.25);
-  }
+    background:transparent;
+    border-color:transparent;
+}
 
   .navbar a.active::before{
     height:70%;
