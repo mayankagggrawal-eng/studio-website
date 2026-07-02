@@ -1194,13 +1194,10 @@ img {
 /* ----- FAQ ----- */
 
 .faq-container {
-  max-width: 1000px;
-  margin: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
 }
-
 .faq-item {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
@@ -1208,6 +1205,7 @@ img {
   padding: 25px;
   text-align: left;
   transition: 0.3s;
+  min-height: 180px;
 }
 
 .faq-item:hover {
