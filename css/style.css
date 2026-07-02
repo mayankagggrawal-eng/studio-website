@@ -27,7 +27,12 @@
   --gold-light: #ffd86a;
 }
 
-
+:root {
+  --text: #ffffff;
+  --muted: #bdbdbd;
+  --bg: #000000;
+  --card: #111111;
+}
 
 body.english-page { --accent: var(--english); }
 body.hindi-page   { --accent: var(--hindi); }
@@ -322,7 +327,7 @@ img {
   cursor: pointer;
   transition: 0.35s;
   background: var(--gold);
-  color: #111;
+  color: var(--card);
   border: 2px solid var(--gold);
   box-shadow: 0 10px 30px rgba(212, 175, 55, 0.25);
 }
@@ -405,8 +410,20 @@ img {
   margin-bottom: 10px;
 }
 
+
+
+
+
+
+
+
+
 .stat-box p {
-  color: var(--gray);
+  color: var(--muted);
+}
+
+.stat-box h3 {
+  color: var(--accent);
 }
 
 /* ----- Shared Section Styles ----- */
@@ -501,10 +518,12 @@ img {
 }
 
 .owner-info p {
-  line-height: 1.8;
-  color: #dddddd;
+  color: var(--muted);
 }
 
+.owner-info h4 {
+  color: var(--accent);
+}
 /* ==========================================================
    PREMIUM FOUNDER SECTION UPGRADE
 ========================================================== */
@@ -605,7 +624,7 @@ img {
 .services {
   padding: 100px 20px;
   background: #0b0b0b;
-  color: #fff;
+  color: var(--text);
 }
 
 /* ==========================
@@ -651,7 +670,7 @@ img {
   border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
   border-radius: 18px;
   text-decoration: none;
-  color: #fff;
+  color: var(--text);
   transition:
     transform .45s,
     box-shadow .45s,
@@ -746,12 +765,16 @@ img {
   transition: color .35s ease;
 }
 
+
+
 .service__content p {
-  margin: 0;
-  color: #bdbdbd;
+  color: var(--muted);
   line-height: 1.8;
 }
 
+.service__content h3 {
+  color: var(--accent);
+}
 /* ==========================
    SERVICE ICON
 ========================== */
@@ -774,7 +797,7 @@ img {
 
 .service:hover .service-icon {
   background: var(--gold);
-  color: #000;
+  color: var(--bg);
   transform: rotate(10deg) scale(1.08);
 }
 
@@ -815,7 +838,7 @@ img {
 
 .service:hover .service-btn {
   background: var(--gold);
-  color: #000;
+  color: var(--bg);
   transform: translateX(6px);
 }/* ==========================
    PREMIUM SHINE EFFECT
@@ -1053,7 +1076,7 @@ img {
   overflow: hidden;
   position: relative;
   flex-shrink: 0;
-  background: #111;
+  background: var(--card);
   border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
   box-shadow: 0 15px 35px rgba(0, 0, 0, .45);
   transition:
@@ -1086,7 +1109,10 @@ img {
   filter: brightness(.78);
 }
 
+
+
 .portfolio-info {
+
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1096,10 +1122,24 @@ img {
     transparent,
     rgba(0, 0, 0, 0.9)
   );
-  color: var(--white);
+  color: var(--text);
+
   font-weight: bold;
   text-align: center;
 }
+
+.portfolio-item {
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+
+
+
+
+
+
+
+
 
 .portfolio-overlay {
   position: absolute;
@@ -1134,9 +1174,21 @@ img {
 
 /* ----- Testimonials ----- */
 
+.testimonials {
+  color: var(--text);
+}
+
+.testimonials p {
+  color: var(--muted);
+}
+
+
+
 .testimonials h4 {
   margin-top: 15px;
-  color: var(--gold);
+ 
+  color: var(--accent);
+}
 }
 
 /* ----- FAQ ----- */
@@ -1169,11 +1221,17 @@ img {
   font-size: 18px;
 }
 
+
+
 .faq-item p {
-  color: var(--gray);
+  color: var(--muted);
   line-height: 1.6;
+
 }
 
+.faq-item h3 {
+  color: var(--accent);
+}
 /* ----- Booking Form ----- */
 
 .booking {
@@ -1203,7 +1261,7 @@ img {
   background: transparent;
   border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
   border-radius: 10px;
-  color: var(--white);
+  color: var(--text);
   outline: none;
   font-size: 15px;
 }
@@ -1245,8 +1303,8 @@ img {
     width:100%;
     height:56px;
     padding:0 45px 0 15px;
-    background:#000;
-    color:#fff;
+    background:var(--bg);
+    color:var(--text);
     border:1px solid rgba(212,175,55,.4);
     border-radius:10px;
     outline:none;
@@ -1306,10 +1364,10 @@ img {
 }
 
 .contact-box h3 {
-  color: var(--gold);
+   color: var(--accent);
   margin-bottom: 10px;
 }.contact-box p {
-  color: var(--gray);
+  color: var(--muted);
   margin: 5px 0;
 }
 
@@ -1339,12 +1397,15 @@ img {
 
 /* ----- Footer ----- */
 
+
+
+
 .footer {
   text-align: center;
   padding: 60px 20px 20px;
-  background: #050505;
+  background: var(--bg);
   border-top: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
-  color: var(--gray);
+  color: var(--muted);
   margin-top: 80px;
 }
 
@@ -1357,13 +1418,13 @@ img {
 }
 
 .footer-column h3 {
-  color: var(--gold);
+  color: var(--accent);
   margin-bottom: 15px;
 }
 
 .footer-column p,
 .footer-column a {
-  color: var(--gray);
+  color: var(--muted);
   display: block;
   text-decoration: none;
   margin-bottom: 10px;
@@ -1371,7 +1432,7 @@ img {
 }
 
 .footer-column a:hover {
-  color: var(--gold);
+  color: var(--accent);
 }
 
 .footer-bottom {
@@ -1379,8 +1440,10 @@ img {
   margin-top: 40px;
   padding-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: #999999;
+  color: var(--muted);
 }
+
+
 
 /* ----- WhatsApp Float Button ----- */
 
@@ -1555,7 +1618,7 @@ img {
 #loader {
   position: fixed;
   inset: 0;
-  background: #000;
+  background: var(--bg);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1721,7 +1784,7 @@ img {
 
 .masonry-gallery {
   padding: 120px 20px;
-  background: #000;
+  background: var(--bg);
   text-align: center;
 }
 
@@ -1738,7 +1801,7 @@ img {
   border-radius: 14px;
   overflow: hidden;
   position: relative;  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
-  background: #111;
+  background: var(--card);
   box-shadow: 0 12px 30px rgba(0, 0, 0, .5);
   transform: translateZ(0);
   transition:
@@ -1865,7 +1928,7 @@ img {
 }
 
 .hero-content h1 {
-  color: #fff;
+  color: var(--text);
   font-size: clamp(40px, 7vw, 78px);
   line-height: 1.1;
   margin-bottom: 24px;
@@ -1878,7 +1941,7 @@ img {
 }
 
 .hero-content p {
-  color: #ddd;
+  color: var(--muted);
   font-size: 19px;
   line-height: 1.8;
   max-width: 700px;
@@ -1892,7 +1955,7 @@ img {
   justify-content: center;
   padding: 16px 42px;
   background: var(--gold);
-  color: #000;
+  color: var(--bg);
   border-radius: 50px;
   font-weight: 700;
   text-decoration: none;
@@ -1976,7 +2039,7 @@ img {
 
 .category-btn {
   background: transparent;
-  color: #fff;
+  color: var(--text);
   border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
   padding: 14px 28px;
   border-radius: 50px;
@@ -1989,7 +2052,7 @@ img {
 .category-btn:hover,
 .category-btn.active {
   background: var(--gold);
-  color: #000;
+  color: var(--bg);
   transform: translateY(-4px);
   box-shadow: 0 12px 25px color-mix(in srgb, var(--accent) 30%, transparent);
 }
@@ -2022,7 +2085,7 @@ img {
 
 .wedding-gallery {
   padding: 80px 8%;
-  background: #000;
+  background: var(--bg);
 }
 
 .gallery-grid {
@@ -2036,7 +2099,7 @@ img {
   overflow: hidden;
   border-radius: 16px;
   cursor: pointer;
-  background: #111;
+  background: var(--card);
   border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
 
   opacity: 1;
@@ -2092,7 +2155,7 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(.6);
-  color: #fff;
+  color: var(--text);
   font-size: 42px;
   opacity: 0;
   transition: .4s;
@@ -2160,7 +2223,7 @@ img {
 .prev-btn,
 .next-btn {
   position: absolute;
-  color: #fff;
+  color: var(--text);
   font-size: 40px;
   cursor: pointer;
   user-select: none;
@@ -2422,7 +2485,7 @@ img {
 
     border-radius:20px;
 
-    background:#111;
+    background:var(--card);
 
     border:1px solid rgba(255,255,255,.06);
 
@@ -2738,7 +2801,7 @@ opacity:1;
 
     border-radius:12px;
 
-    color:#fff;
+    color:var(--text);
 
     text-decoration:none;
 
