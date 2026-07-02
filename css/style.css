@@ -20,9 +20,11 @@
   --gold-light: #FFD700;
 
   /* Language Colors */
-  --english: #D4AF37;
-  --hindi: #C65D00;
-  --marathi: #8C5A2B;
+--english: #D4AF37;   /* Royal Gold */
+
+--hindi: #B76E79;     /* Rose Gold */
+
+--marathi: #B08D57;   /* Antique Champagne Gold */
 }
 
 html {
@@ -2985,7 +2987,7 @@ body.menu-open{
   .navbar {
     position:fixed ;
     top: 80px;
-  
+
 height: calc(100vh - 80px);
     right: -100%;
 
