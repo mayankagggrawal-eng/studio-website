@@ -16,8 +16,8 @@
   --gray: #cccccc;
 
   --english: #D4AF37;
-  --hindi: #10B981;
-  --marathi: #8B5CF6;
+  --hindi: #C65D00;
+  --marathi: #E16A00;
 
   --accent: var(--english);
 
@@ -35,8 +35,17 @@
 }
 
 body.english-page { --accent: var(--english); }
-body.hindi-page   { --accent: var(--hindi); }
-body.marathi-page { --accent: var(--marathi); }
+body.hindi-page   { --accent: var(--hindi); --bg: #FFF8F0;
+    --card: #FFFFFF;
+
+    --text: #2B2B2B;
+    --muted: #666666;
+
+    --gold: #F4B400;
+    --gold-light: #FFD65A;}
+body.marathi-page { --accent: var(--marathi);     --bg:#FFF9F2;
+    --text:#2B2B2B;
+ }
 
 
 
