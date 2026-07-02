@@ -20,12 +20,32 @@
   --gold-light: #FFD700;
 
   /* Language Colors */
---english: #D4AF37;   /* Royal Gold */
+  --english: #D4AF37;   /* Royal Gold */
+  --hindi: #B76E79;     /* Rose Gold */
+  --marathi: #B08D57;   /* Antique Champagne Gold */
 
---hindi: #B76E79;     /* Rose Gold */
-
---marathi: #B08D57;   /* Antique Champagne Gold */
+  /* Current Theme Color */
+  --accent: var(--english);
 }
+
+
+body.english-page{
+    --accent: var(--english);
+}
+
+body.hindi-page{
+    --accent: var(--hindi);
+}
+
+body.marathi-page{
+    --accent: var(--marathi);
+}
+
+
+
+
+
+
 
 html {
   scroll-behavior: smooth;
@@ -147,13 +167,13 @@ img {
   text-decoration: none;
   font-size: 28px;
   font-weight: bold;
-  color: var(--gold);
+  color: var(--accent);
 }
 
 .logo-text {
   font-size: 18px;
   font-weight: 700;
-  color: var(--gold);
+ color: var(--accent);
   letter-spacing: 1px;
 }
 
@@ -182,13 +202,13 @@ img {
   bottom: -5px;
   width: 0%;
   height: 2px;
-  background: var(--gold);
+  background: var(--accent);
   transition: 0.3s;
 }
 
 .navbar a:hover,
 .navbar a.active {
-  color: var(--gold);
+  color: var(--accent);
 }
 
 .navbar a:hover::after,
