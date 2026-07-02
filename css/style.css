@@ -2998,3 +2998,22 @@ body.menu-open{
     background: rgba(212,175,55,0.12);
   }
 }
+
+
+
+/* ===========================================
+   IMAGE PROTECTION
+=========================================== */
+
+img{
+    -webkit-user-drag:none;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    pointer-events:auto;
+}
+
+body{
+    -webkit-touch-callout:none;
+}
