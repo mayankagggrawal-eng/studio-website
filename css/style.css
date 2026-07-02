@@ -24,7 +24,7 @@
   --gold: var(--accent);
 
   /* SAFE fallback system */
-  --gold-light: #ffd86a;
+  --gold-light: color-mix(in srgb, var(--accent) 80%, #ffffff);
 }
 
 :root {
@@ -91,9 +91,9 @@ img {
   text-align: center;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(15px);
-  border: 1px solid rgba(212, 175, 55, 0.5);
+  border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
   border-radius: 25px;
-  box-shadow: 0 0 30px rgba(212, 175, 55, 0.25);
+  box-shadow: 0 0 30px color-mix(in srgb, var(--accent) 25%, transparent);
 }
 
 .language-box h3 {
@@ -128,7 +128,7 @@ img {
 
 .language-box button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.7);
+  box-shadow: 0 0 20px color-mix(in srgb, var(--accent) 70%, transparent);
 }
 
 /* ----- Header & Navigation ----- */
@@ -333,7 +333,7 @@ img {
 
 .hero-btn:hover {
   transform: translateY(-4px);
-  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.45);
+  box-shadow: 0 15px 40px color-mix(in srgb, var(--accent) 45%, transparent);
 }
 
 .secondary-btn {
@@ -393,7 +393,7 @@ img {
   padding: 25px;
   text-align: center;
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
   border-radius: 15px;
   transition: 0.3s;
 }
@@ -643,7 +643,7 @@ img {
 
 .services__header h2 {
   font-size: 44px;
-  background: linear-gradient(90deg, var(--accent), #FFD700);
+  background: linear-gradient(90deg, var(--accent), var(--gold-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -2547,7 +2547,7 @@ border-color: var(--accent);  box-shadow: 0 15px 40px color-mix(in srgb, var(--a
     border-color:var(--accent);
 
     box-shadow:
-    0 25px 70px rgba(212,175,55,.18);
+    0 25px 70px color-mix(in srgb, var(--accent) 18%, transparent);
 
 }
 .gallery-item img,
@@ -3023,7 +3023,7 @@ background:color-mix(in srgb, var(--accent) 12%, transparent);
 
 .call-btn:hover{
 
-    background:#FFD700;
+    background:var(--gold-light);
 
     transform:translateY(-2px);
 
@@ -3057,7 +3057,7 @@ background:color-mix(in srgb, var(--accent) 12%, transparent);
 
 .location-btn:hover{
 
-    background:rgba(212,175,55,.12);
+    background:color-mix(in srgb, var(--accent) 12%, transparent);
 
 }
 
@@ -3120,7 +3120,7 @@ body.menu-open{
     background: rgba(0,0,0,0.85);
     backdrop-filter: blur(12px);
 
-    border-left: 1px solid rgba(212,175,55,0.25);
+    border-left: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
     box-shadow: -20px 0 60px rgba(0,0,0,0.6);
 
     transition: right 0.35s ease;
