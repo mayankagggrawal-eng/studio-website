@@ -16,8 +16,8 @@
 
 
   /* English */
-  --gold: #D4AF37;
-  --gold-light: #FFD700;
+  --accent: #D4AF37;
+  --accent-light: #FFD700;
 
   /* Language Colors */
   --english: #D4AF37;   /* Royal Gold */
@@ -123,7 +123,7 @@ img {
   margin: 10px 0;
   border: none;
   border-radius: 12px;
-  background: linear-gradient(135deg, var(--accent), var(--gold-light));
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
@@ -557,7 +557,7 @@ img {
     transparent,
     var(--accent),
     transparent,
-    var(--gold-light),
+    var(--accent-light),
     transparent
   );
   filter: blur(10px);
