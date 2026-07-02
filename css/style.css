@@ -227,7 +227,7 @@ img {
 .menu-toggle span {
   width: 28px;
   height: 3px;
-  background: var(--gold);
+  background: var(--accent);
   border-radius: 5px;
   transition: 0.3s;
 }
