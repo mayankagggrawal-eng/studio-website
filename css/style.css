@@ -2998,6 +2998,7 @@ body.menu-open{
 
 
 
+
 @media (max-width:768px) {
 
   .navbar {
@@ -3005,14 +3006,16 @@ body.menu-open{
     top: 80px;
     right: -100%;
 
-    width: 175px;
-    max-width: 55%;
-    height: calc(100vh - 80px);
+    width: 20%;
+    min-width: 140px;
+    max-width: 180px;
+
+    height: 50vh;   /* 🔥 HALF SCREEN */
 
     display: flex;
     flex-direction: column;
 
-    padding: 30px 20px;
+    padding: 20px 15px;
 
     background: rgba(0,0,0,0.85);
     backdrop-filter: blur(12px);
@@ -3029,7 +3032,7 @@ body.menu-open{
   .navbar.active {
     right: 0;
   }
-
+}
   .navbar a {
     position: relative;
     width: 100%;
