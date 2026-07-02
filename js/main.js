@@ -122,11 +122,13 @@ function openGallery(key) {
           <div class="gallery-grid">
 
             ${gallery.images.map(image => `
-              <img
-                src="${image}"
-                alt="${gallery.title}"
-                loading="lazy">
-            `).join("")}
+<img
+  src="${image}"
+  alt="${gallery.title}"
+  loading="lazy"
+  draggable="false"
+  ondragstart="return false"
+  oncontextmenu="return false">            `).join("")}
 
           </div>
 
@@ -394,65 +396,75 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
 /* ===============================
    CONTENT PROTECTION
 ================================ */
 
-// Disable right click on entire website
-document.addEventListener("contextmenu", (e) => {
-  if (e.target.closest("img")) {
-    e.preventDefault();
-  }
-});
+(function () {
 
-// Disable copy, cut, select
+    // Disable Right Click
+    document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+    });
 
-document.addEventListener("copy", (e) => {
-  e.preventDefault();
-});
+    // Disable Drag
+    document.addEventListener("dragstart", function (e) {
+        e.preventDefault();
+    });
 
-document.addEventListener("cut", (e) => {
-  e.preventDefault();
-});
+    // Disable Drop
+    document.addEventListener("drop", function (e) {
+        e.preventDefault();
+    });
 
-document.addEventListener("selectstart", (e) => {
-  if (e.target.closest("img")) {
-    e.preventDefault();
-  }
-});
+    // Disable Copy
+    document.addEventListener("copy", function (e) {
+        e.preventDefault();
+    });
 
-// Disable image drag
-document.addEventListener("dragstart", (e) => {
-  if (e.target.closest("img")) {
-    e.preventDefault();
-  }
-});
+    // Disable Cut
+    document.addEventListener("cut", function (e) {
+        e.preventDefault();
+    });
 
-// Disable image mouse down
-document.addEventListener("mousedown", (e) => {
-  if (e.target.closest("img")) {
-    e.preventDefault();
-  }
-});
+    // Disable Selection
+    document.addEventListener("selectstart", function (e) {
+        e.preventDefault();
+    });
 
-// Disable keyboard shortcuts
-document.addEventListener("keydown", (e) => {
-  const key = e.key.toLowerCase();
+    // Disable Image Drag
+    document.querySelectorAll("img").forEach(function (img) {
 
-  // Ctrl+C, Ctrl+X, Ctrl+A, Ctrl+S
-  if (e.ctrlKey && ["c", "x", "a", "s"].includes(key)) {
-    e.preventDefault();
-  }
-});
+        img.draggable = false;
 
-// Make every image non-draggable
-window.addEventListener("load", () => {
-  document.querySelectorAll("img").forEach((img) => {
-    img.setAttribute("draggable", "false");
-    img.setAttribute("oncontextmenu", "return false");
-    img.style.userSelect = "none";
-    img.style.webkitUserDrag = "none";
-    img.style.webkitUserSelect = "none";
-  });
-});
+        img.setAttribute("draggable", "false");
+
+        img.ondragstart = function () {
+            return false;
+        };
+
+        img.oncontextmenu = function () {
+            return false;
+        };
+
+    });
+
+    // Disable Keyboard Shortcuts
+    document.addEventListener("keydown", function (e) {
+
+        const key = e.key.toLowerCase();
+
+        if (
+            e.ctrlKey &&
+            ["a", "c", "x", "s", "u", "p"].includes(key)
+        ) {
+            e.preventDefault();
+        }
+
+        if (key === "f12") {
+            e.preventDefault();
+        }
+
+    });
+
+})();
