@@ -16,11 +16,11 @@
 
 
   /* English */
-  --accent: #D4AF37;
-  --accent-light: #FFD700;
+  --accent: var(--accent);
+  --accent-light: var(--accent);
 
   /* Language Colors */
-  --english: #D4AF37;   /* Royal Gold */
+  --english: var(--accent);   /* Royal Gold */
   --hindi: #B76E79;     /* Rose Gold */
   --marathi: #B08D57;   /* Antique Champagne Gold */
 
@@ -148,7 +148,7 @@ img {
   z-index: 1000;
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
 }
 
@@ -156,7 +156,7 @@ img {
   background: rgba(0, 0, 0, 0.96);
   backdrop-filter: blur(18px);
   padding: 12px 50px;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.45);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
 }
 
@@ -333,12 +333,12 @@ img {
   background: var(--accent);
   color: #111;
   border: 2px solid var(--accent);
-  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.25);
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--accent) 30%, transparent);
 }
 
 .hero-btn:hover {
   transform: translateY(-4px);
-  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.45);
+  box-shadow: 0 15px 40px color-mix(in srgb, var(--accent) 30%, transparent);
 }
 
 .secondary-btn {
@@ -398,7 +398,7 @@ img {
   padding: 25px;
   text-align: center;
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
   border-radius: 15px;
   transition: 0.3s;
 }
@@ -628,7 +628,7 @@ img {
 
 .services__header h2 {
   font-size: 44px;
-  background: linear-gradient(90deg, #D4AF37, #FFD700);
+  background: linear-gradient(90deg, var(--accent), var(--accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -1001,7 +1001,7 @@ img {
 }
 
 .service:hover .service__content h3 {
-  color: #FFD700;
+  color: var(--accent);
 }
 
 .service:hover .service__highlights span {
@@ -1279,7 +1279,7 @@ img {
     right:15px;
     top:50%;
     transform:translateY(-50%);
-    color:#D4AF37;
+    color:var(--accent);
     pointer-events:none;
     font-size:12px;
 }
@@ -1586,7 +1586,7 @@ img {
 }
 
 .loader-content h2 {
-  color: #D4AF37;
+  color: var(--accent);
   font-size: 24px;
   letter-spacing: 3px;
   font-weight: 600;
@@ -1608,7 +1608,7 @@ img {
   left: -40%;
   width: 40%;
   height: 100%;
-  background: #D4AF37;
+  background: var(--accent);
   animation: loading 1.3s linear infinite;
 }
 
@@ -2211,7 +2211,7 @@ img {
 
     font-size:48px;
 
-    color:#D4AF37;
+    color:var(--accent);
 
     text-align:center;
 
@@ -2451,7 +2451,7 @@ img {
     transform:
     translateY(-10px);
 
-    border-color:#D4AF37;
+    border-color:var(--accent);
 
     box-shadow:
     0 25px 70px rgba(212,175,55,.18);
@@ -2763,7 +2763,7 @@ opacity:1;
 
     background:rgba(212,175,55,.12);
 
-    color:#D4AF37;
+    color:var(--accent);
 
     transform:translateX(8px);
 
@@ -2773,7 +2773,7 @@ opacity:1;
 
     background:rgba(212,175,55,.15);
 
-    color:#D4AF37;
+    color:var(--accent);
 
 }
 
@@ -2839,7 +2839,7 @@ opacity:1;
 
     height:3px;
 
-    background:#D4AF37;
+    background:var(--accent);
 
     border-radius:20px;
 
@@ -2924,7 +2924,7 @@ opacity:1;
 
 .call-btn{
 
-    background:#D4AF37;
+    background:var(--accent);
 
     color:#000 !important;
 
@@ -2932,7 +2932,7 @@ opacity:1;
 
 .call-btn:hover{
 
-    background:#FFD700;
+    background:var(--accent);
 
     transform:translateY(-2px);
 
@@ -2960,7 +2960,7 @@ opacity:1;
 
     border:1px solid rgba(212,175,55,.35);
 
-    color:#D4AF37 !important;
+    color:var(--accent) !important;
 
 }
 
@@ -2980,7 +2980,7 @@ opacity:1;
 
 .navbar::-webkit-scrollbar-thumb{
 
-    background:#D4AF37;
+    background:var(--accent);
 
     border-radius:20px;
 
@@ -3070,13 +3070,13 @@ height: calc(100vh - 80px);
     transform:translateY(-50%);
     width:3px;
     height:0;
-    background:#D4AF37;
+    background:var(--accent);
     border-radius:10px;
     transition:.35s;
   }
 
 .navbar a:hover{
-    color:#D4AF37;
+    color:var(--accent);
     background:transparent;
     border-color:transparent;
     transform:translateX(8px);
@@ -3086,7 +3086,7 @@ height: calc(100vh - 80px);
   }
 
 .navbar a.active{
-    color:#D4AF37;
+    color:var(--accent);
     background:transparent;
     border-color:transparent;
 }
