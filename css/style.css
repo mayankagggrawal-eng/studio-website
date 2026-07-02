@@ -450,7 +450,9 @@ img {
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
-}.card {
+}
+
+.card {
   width: 280px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
@@ -512,16 +514,12 @@ img {
 }
 
 .owner-info h4 {
-  color: var(--gray);
+  color: var(--accent);
   margin-bottom: 20px;
 }
 
 .owner-info p {
   color: var(--muted);
-}
-
-.owner-info h4 {
-  color: var(--accent);
 }
 /* ==========================================================
    PREMIUM FOUNDER SECTION UPGRADE
@@ -768,19 +766,13 @@ img {
 .service__content h3 {
   margin: 0 0 12px;
   font-size: 24px;
-  color: var(--gold);
+  color: var(--accent);
   transition: color .35s ease;
 }
-
-
 
 .service__content p {
   color: var(--muted);
   line-height: 1.8;
-}
-
-.service__content h3 {
-  color: var(--accent);
 }
 /* ==========================
    SERVICE ICON
@@ -1022,12 +1014,7 @@ img {
 }
 
 .service:hover .service__content h3 {
-  color: #FFD700;
-}
-
-.service:hover .service__content h3 {
   color: var(--accent);
-
 }
 
 .service:focus-visible {
@@ -1072,9 +1059,8 @@ img {
 }
 
 /* Pause Auto Scroll on Hover */
-
 .portfolio:hover .portfolio-track {
-
+  animation-play-state: paused;
 }
 
 .portfolio-item {
@@ -1192,13 +1178,8 @@ color: var(--accent);  font-size: 30px;
 
 .testimonials h4 {
   margin-top: 15px;
- 
   color: var(--accent);
 }
-}
-
-/* ----- FAQ ----- */
-
 
 /* ----- FAQ ----- */
 
@@ -1264,22 +1245,16 @@ color: var(--accent);  font-size: 30px;
 
 
 
-.faq-container{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
+@media (min-width: 993px) {
+  .faq-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-@media (max-width:992px){
-    .faq-container{
-        grid-template-columns:repeat(2,1fr);
-    }
-}
-
-@media (max-width:768px){
-    .faq-container{
-        grid-template-columns:1fr;
-    }
+@media (max-width: 992px) {
+  .faq-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 

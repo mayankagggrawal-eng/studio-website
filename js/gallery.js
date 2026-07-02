@@ -82,88 +82,76 @@ img.onerror = function(){
 // CLICK IMAGE OPEN
 // =====================
 galleryGrid.addEventListener("click", (e) => {
+  const item = e.target.closest(".gallery-item");
+  if (!item) return;
 
-    const item = e.target.closest(".gallery-item");
-    if (!item) return;
-
-    currentIndex = Number(item.dataset.index);
-    openLightbox();
+  currentIndex = Number(item.dataset.index);
+  openLightbox();
 });
 
 // =====================
 // LIGHTBOX OPEN
 // =====================
 function openLightbox() {
+  if (!currentImages.length) return;
 
-    if (!currentImages.length) return;
+  lightbox.classList.add("active");
 
-    lightbox.classList.add("active");
+  lightbox.innerHTML = `
+    <span class="close-btn">&times;</span>
+    <span class="prev-btn">&#10094;</span>
+    <img
+      src="${currentImages[currentIndex]}"
+      alt=""
+      loading="eager"
+      decoding="async"
+      draggable="false">
+    <span class="next-btn">&#10095;</span>
+  `;
 
-    lightbox.innerHTML = `
-        <span class="close-btn">&times;</span>
-        <span class="prev-btn">&#10094;</span>
-        <img
-src="${currentImages[currentIndex]}"
-alt=""
-loading="eager"
-decoding="async"
-draggable="false">
-        <span class="next-btn">&#10095;</span>
-    `;
-
-    lightbox.querySelector(".close-btn").onclick = closeLightbox;
-    lightbox.querySelector(".prev-btn").onclick = prevImage;
-    lightbox.querySelector(".next-btn").onclick = nextImage;
+  lightbox.querySelector(".close-btn").onclick = closeLightbox;
+  lightbox.querySelector(".prev-btn").onclick = prevImage;
+  lightbox.querySelector(".next-btn").onclick = nextImage;
 }
 
 // =====================
 // LIGHTBOX CONTROLS
 // =====================
 function closeLightbox() {
-    lightbox.classList.remove("active");
+  lightbox.classList.remove("active");
 }
 
 function nextImage() {
-    currentIndex = (currentIndex + 1) % currentImages.length;
-    updateLightbox();
+  currentIndex = (currentIndex + 1) % currentImages.length;
+  updateLightbox();
 }
 
 function prevImage() {
-    currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
-    updateLightbox();
+  currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+  updateLightbox();
 }
-function updateLightbox(){
 
-    const image=lightbox.querySelector("img");
+function updateLightbox() {
+  const image = lightbox.querySelector("img");
+  image.style.opacity = "0";
 
-    image.style.opacity="0";
-
-    setTimeout(()=>{
-
-        image.src=currentImages[currentIndex];
-
-        image.onload=()=>{
-
-            image.style.opacity="1";
-
-        };
-
-    },120);
-
+  setTimeout(() => {
+    image.src = currentImages[currentIndex];
+    image.onload = () => {
+      image.style.opacity = "1";
+    };
+  }, 120);
 }
 
 // =====================
 // FILTER BUTTONS
 // =====================
 filterButtons.forEach(btn => {
-
-    btn.addEventListener("click", () => {
-
-        filterButtons.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-
-        renderGallery(btn.dataset.filter);
-    });
+  btn.addEventListener("click", () => {
+    filterButtons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    renderGallery(btn.dataset.filter);
+  });
 });
 
 // INIT

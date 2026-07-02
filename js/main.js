@@ -396,110 +396,63 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* ===============================
-   BASIC COPY PROTECTION
+   CONTENT PROTECTION
 ================================ */
 
-document.addEventListener("copy", (e) => {
+// Disable right click on entire website
+document.addEventListener("contextmenu", (e) => {
+  if (e.target.closest("img")) {
     e.preventDefault();
+  }
+});
+
+// Disable copy, cut, select
+
+document.addEventListener("copy", (e) => {
+  e.preventDefault();
 });
 
 document.addEventListener("cut", (e) => {
-    e.preventDefault();
+  e.preventDefault();
 });
 
 document.addEventListener("selectstart", (e) => {
+  if (e.target.closest("img")) {
     e.preventDefault();
-});
-
-document.addEventListener("contextmenu", (e) => {
-    if (e.target.closest("img")) {
-        e.preventDefault();
-    }
-});
-
-document.addEventListener("dragstart", (e) => {
-    if (e.target.closest("img")) {
-        e.preventDefault();
-    }
-});
-
-document.addEventListener("keydown", (e) => {
-
-    // Ctrl+C
-    if (e.ctrlKey && e.key.toLowerCase() === "c") {
-        e.preventDefault();
-    }
-
-    // Ctrl+X
-    if (e.ctrlKey && e.key.toLowerCase() === "x") {
-        e.preventDefault();
-    }
-
-    // Ctrl+A
-    if (e.ctrlKey && e.key.toLowerCase() === "a") {
-        e.preventDefault();
-    }
-
-    // Ctrl+S
-    if (e.ctrlKey && e.key.toLowerCase() === "s") {
-        e.preventDefault();
-    }
-
-});
-
-/* ===========================================
-   GLOBAL IMAGE PROTECTION
-   =========================================== */
-
-// Disable right click on entire website
-document.addEventListener("contextmenu", function (e) {
-    e.preventDefault();
+  }
 });
 
 // Disable image drag
-document.addEventListener("dragstart", function (e) {
-    if (e.target.closest("img")) {
-        e.preventDefault();
-    }
-});
-
-// Disable Save (Ctrl+S)
-document.addEventListener("keydown", function (e) {
-
-    const key = e.key.toLowerCase();
-
-    if (e.ctrlKey && key === "s") {
-        e.preventDefault();
-        return false;
-    }
-
-});
-
-// Disable image selection
-document.addEventListener("selectstart", function (e) {
-    if (e.target.closest("img")) {
-        e.preventDefault();
-    }
+document.addEventListener("dragstart", (e) => {
+  if (e.target.closest("img")) {
+    e.preventDefault();
+  }
 });
 
 // Disable image mouse down
-document.addEventListener("mousedown", function (e) {
-    if (e.target.closest("img")) {
-        e.preventDefault();
-    }
+document.addEventListener("mousedown", (e) => {
+  if (e.target.closest("img")) {
+    e.preventDefault();
+  }
+});
+
+// Disable keyboard shortcuts
+document.addEventListener("keydown", (e) => {
+  const key = e.key.toLowerCase();
+
+  // Ctrl+C, Ctrl+X, Ctrl+A, Ctrl+S
+  if (e.ctrlKey && ["c", "x", "a", "s"].includes(key)) {
+    e.preventDefault();
+  }
 });
 
 // Make every image non-draggable
-window.addEventListener("load", function () {
-
-    document.querySelectorAll("img").forEach(function (img) {
-
-        img.setAttribute("draggable", "false");
-        img.setAttribute("oncontextmenu", "return false");
-        img.style.userSelect = "none";
-        img.style.webkitUserDrag = "none";
-        img.style.webkitUserSelect = "none";
-
-    });
-
+window.addEventListener("load", () => {
+  document.querySelectorAll("img").forEach((img) => {
+    img.setAttribute("draggable", "false");
+    img.setAttribute("oncontextmenu", "return false");
+    img.style.userSelect = "none";
+    img.style.webkitUserDrag = "none";
+    img.style.webkitUserSelect = "none";
+  });
 });
