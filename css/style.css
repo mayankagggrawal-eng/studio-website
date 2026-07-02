@@ -1218,6 +1218,8 @@ img {
 .date-label,
 .select-label {
   position: absolute;
+      pointer-events:none;
+
   left: 12px;
   top: -8px;
   font-size: 12px;
@@ -1226,15 +1228,38 @@ img {
   padding: 0 5px;
 }
 
-.input-group select {
-  width: 100%;
-  padding: 14px;
-  background: var(--black);
-  color: var(--white);
-  border: 1px solid rgba(212, 175, 55, 0.4);
-  border-radius: 10px;
-  outline: none;
-  font-size: 15px;
+.input-group select{
+    width:100%;
+    height:56px;
+    padding:0 45px 0 15px;
+    background:#000;
+    color:#fff;
+    border:1px solid rgba(212,175,55,.4);
+    border-radius:10px;
+    outline:none;
+    font-size:15px;
+    line-height:56px;
+    appearance:none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+.input-group{
+    position:relative;
+}
+
+.input-group::after{
+    content:"▼";
+    position:absolute;
+    right:15px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#D4AF37;
+    pointer-events:none;
+    font-size:12px;
 }
 
 /* ----- Contact & Location ----- */
