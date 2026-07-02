@@ -3008,21 +3008,84 @@ body.menu-open{
     z-index: 1150;
   }
 
-  .navbar.active {
-    right: 0;
+
+  .navbar.active{
+    right:0;
   }
 
-  .navbar a {
-    width: 25%;
-    padding: 14px 18px;
-    font-size: 12px;
-    border-radius: 6px;
+  .navbar a{
+    position:relative;
+
+    width:100%;
+    display:flex;
+    align-items:center;
+
+    padding:16px 18px;
+    margin:6px 0;
+
+    font-size:17px;
+    font-weight:500;
+    letter-spacing:.4px;
+
+    color:#F2F2F2;
+    text-decoration:none;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.03);
+    border:1px solid transparent;
+
+    transition:all .35s ease;
   }
 
-  .navbar a:hover {
-    background: rgba(212,175,55,0.12);
+  .navbar a::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:50%;
+    transform:translateY(-50%);
+    width:3px;
+    height:0;
+    background:#D4AF37;
+    border-radius:10px;
+    transition:.35s;
   }
+
+  .navbar a:hover{
+    color:#D4AF37;
+    background:rgba(212,175,55,.10);
+    border-color:rgba(212,175,55,.20);
+    transform:translateX(8px);
+  }
+
+  .navbar a:hover::before{
+    height:70%;
+  }
+
+  .navbar a.active{
+    color:#D4AF37;
+    background:rgba(212,175,55,.14);
+    border-color:rgba(212,175,55,.25);
+  }
+
+  .navbar a.active::before{
+    height:70%;
+  }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
