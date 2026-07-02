@@ -392,24 +392,4 @@ document.addEventListener("DOMContentLoaded", () => {
    END OF FILE
 ================================ */
 
-// IMAGE + BASIC COPY PROTECTION (SAFE ADD-ON)
-
-document.addEventListener("contextmenu", function (e) {
-  if (e.target.tagName === "IMG") {
-    e.preventDefault();
-  }
-});
-
-document.addEventListener("dragstart", function (e) {
-  if (e.target.tagName === "IMG") {
-    e.preventDefault();
-  }
-});
-
-document.addEventListener("keydown", function (e) {
-  if (e.ctrlKey && e.key.toLowerCase() === "s") {
-    e.preventDefault();
-    alert("Saving disabled");
-  }
-});
 
