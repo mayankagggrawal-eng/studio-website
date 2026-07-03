@@ -9,39 +9,39 @@ window.galleryData = [
   // ==========================
 {
   category: "Maternity Shoot",
-  image: "../../assets/services/events/meternity/01 (1).jpg"
+  image: "../../assets/services/events/meternity/01 (1).webp"
 },
 {
   category: "Maternity Shoot",
-  image: "../../assets/services/events/meternity/01 (2).jpg"
+  image: "../../assets/services/events/meternity/01 (2).webp"
 },
 {
   category: "Maternity Shoot",
-  image: "../../assets/services/events/meternity/01 (3).jpg"
+  image: "../../assets/services/events/meternity/01 (3).webp"
 },
 {
   category: "Maternity Shoot",
-  image: "../../assets/services/events/meternity/01 (4).jpg"
+  image: "../../assets/services/events/meternity/01 (4).webp"
 },
 {
   category: "Maternity Shoot",
-  image: "../../assets/services/events/meternity/01 (5).jpg"
+  image: "../../assets/services/events/meternity/01 (5).webp"
 },
 {
   category: "Maternity Shoot",
-  image: "../../assets/services/events/meternity/01 (6).jpg"
+  image: "../../assets/services/events/meternity/01 (6).webp"
 },
 {
   category: "Maternity Shoot",
-  image: "../../assets/services/events/meternity/01 (7).jpg"
+  image: "../../assets/services/events/meternity/01 (7).webp"
 },
 {
   category: "Maternity Shoot",
-  image: "../../assets/services/events/meternity/01 (8).jpg"
+  image: "../../assets/services/events/meternity/01 (8).webp"
 },
 {
   category: "Maternity Shoot",
-  image: "../../assets/services/events/meternity/01 (9).jpg"
+  image: "../../assets/services/events/meternity/01 (9).webp"
 },
 
 
