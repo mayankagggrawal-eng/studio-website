@@ -14,69 +14,41 @@ let currentIndex = 0;
 // =====================
 function renderGallery(filter = "all") {
 
-    galleryGrid.innerHTML = "";
+  galleryGrid.innerHTML = "";
 
-    const safeFilter = filter || "all";
+  const safeFilter = filter || "all";
 
-   const filtered = window.galleryData.filter(item =>
-        safeFilter === "all" || item.category === safeFilter
-    );
+  const filtered = window.galleryData.filter(item =>
+    safeFilter === "all" || item.category === safeFilter
+  );
 
-    // 🔥 IMPORTANT FIX
-currentImages = filtered.map(item => item.image);
+  currentImages = [];
 
-    filtered.forEach((item, index) => {
+  filtered.forEach((item, index) => {
 
-        const div = document.createElement("div");
-        div.className = "gallery-item";
-        div.dataset.index = index;
+    currentImages.push(item.image);
 
+    const div = document.createElement("div");
+    div.className = "gallery-item";
+    div.dataset.index = index;
 
+    const img = document.createElement("img");
 
-const img = document.createElement("img");
+    img.src = item.image;
+    img.alt = item.category;
 
-img.src = currentImages[index];
+    img.loading = "lazy";
+    img.decoding = "async";
+    img.draggable = false;
+    img.setAttribute("fetchpriority", "low");
 
-img.alt = item.category;
+    img.onerror = function () {
+      this.src = "../../assets/no-image.jpg";
+    };
 
-img.loading = "lazy";
-
-img.decoding = "async";
-
-img.draggable = false;
-
-img.setAttribute("fetchpriority","low");
-
-img.onerror = function(){
-
-    this.src="../../assets/no-image.jpg";
-
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        div.appendChild(img);
-        galleryGrid.appendChild(div);
-    });
+    div.appendChild(img);
+    galleryGrid.appendChild(div);
+  });
 }
 // =====================
 // CLICK IMAGE OPEN
@@ -85,7 +57,10 @@ galleryGrid.addEventListener("click", (e) => {
   const item = e.target.closest(".gallery-item");
   if (!item) return;
 
-  currentIndex = Number(item.dataset.index);
+  const index = Number(item.dataset.index);
+  if (Number.isNaN(index)) return;
+
+  currentIndex = index;
   openLightbox();
 });
 
