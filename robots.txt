@@ -1,4 +1,5 @@
 User-agent: *
+
 Allow: /
 
 Sitemap: https://studio-website-d42.pages.dev/sitemap.xml
