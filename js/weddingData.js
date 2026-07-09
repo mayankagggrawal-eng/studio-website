@@ -8,240 +8,206 @@ window.galleryData = [
 
 
 {
-  category: "Bride Shoot",
-  image: "../../assets/services/wedding/bride/01 (1).JPG"
+  category: "Bride Portraits",
+  image: "../../assets/services/wedding/bride/A (1).webp"
 },
 {
-  category: "Bride Shoot",
-  image: "../../assets/services/wedding/bride/01 (2).JPG"
+  category: "Bride Portraits",
+  image: "../../assets/services/wedding/bride/A (2).webp"
 },
 {
-  category: "Bride Shoot",
-  image: "../../assets/services/wedding/bride/01 (3).JPG"
+  category: "Bride Portraits",
+  image: "../../assets/services/wedding/bride/A (3).webp"
 },
 {
-  category: "Bride Shoot",
-  image: "../../assets/services/wedding/bride/01 (4).JPG"
+  category: "Bride Portraits",
+  image: "../../assets/services/wedding/bride/A (4).webp"
 },
 {
-  category: "Bride Shoot",
-  image: "../../assets/services/wedding/bride/01 (5).JPG"
+  category: "Bride Portraits",
+  image: "../../assets/services/wedding/bride/A (5).webp"
 },
 {
-  category: "Bride Shoot",
-  image: "../../assets/services/wedding/bride/01 (6).JPG"
+  category: "Bride Portraits",
+  image: "../../assets/services/wedding/bride/A (6).webp"
 },
 {
-  category: "Bride Shoot",
-  image: "../../assets/services/wedding/bride/01 (7).JPG"
+  category: "Bride Portraits",
+  image: "../../assets/services/wedding/bride/A (7).webp"
 },
 {
-  category: "Bride Shoot",
-  image: "../../assets/services/wedding/bride/01 (8).JPG"
+  category: "Bride Portraits",
+  image: "../../assets/services/wedding/bride/A (8).webp"
 },
 {
-  category: "Bride Shoot",
-  image: "../../assets/services/wedding/bride/01 (9).JPG"
+  category: "Bride Portraits",
+  image: "../../assets/services/wedding/bride/A (9).webp"
 },
 {
-  category: "Bride Shoot",
-  image: "../../assets/services/wedding/bride/01 (10).JPG"
+  category: "Bride Portraits",
+  image: "../../assets/services/wedding/bride/A (10).webp"
 },
 {
-  category: "Bride Shoot",
-  image: "../../assets/services/wedding/bride/01 (11).JPG"
+  category: "Bride Portraits",
+  image: "../../assets/services/wedding/bride/A (11).webp"
 },
 {
-  category: "Bride Shoot",
-  image: "../../assets/services/wedding/bride/01 (12).JPG"
+  category: "Bride Portraits",
+  image: "../../assets/services/wedding/bride/A (12).webp"
 },
 {
-  category: "Bride Shoot",
-  image: "../../assets/services/wedding/bride/01 (13).JPG"
+  category: "Bride Portraits",
+  image: "../../assets/services/wedding/bride/A (13).webp"
 },
 {
-  category: "Bride Shoot",
-  image: "../../assets/services/wedding/bride/01 (14).JPG"
+  category: "Bride Portraits",
+  image: "../../assets/services/wedding/bride/A (14).webp"
 },
 {
-  category: "Bride Shoot",
-  image: "../../assets/services/wedding/bride/01 (15).JPG"
+  category: "Bride Portraits",
+  image: "../../assets/services/wedding/bride/A (15).webp"
 },
 {
-  category: "Bride Shoot",
-  image: "../../assets/services/wedding/bride/01 (16).JPG"
+  category: "Bride Portraits",
+  image: "../../assets/services/wedding/bride/A (16).webp"
 },
 {
-  category: "Bride Shoot",
-  image: "../../assets/services/wedding/bride/01 (17).JPG"
+  category: "Bride Portraits",
+  image: "../../assets/services/wedding/bride/A (17).webp"
+},
+{
+  category: "Bride Portraits",
+  image: "../../assets/services/wedding/bride/A (18).webp"
+},
+{
+  category: "Bride Portraits",
+  image: "../../assets/services/wedding/bride/A (19).webp"
+},
+{
+  category: "Bride Portraits",
+  image: "../../assets/services/wedding/bride/A (20).webp"
 },
 
 
 
 
-// ==========================
-// Wedding Shoot 
-// ==========================
+
+  // ==========================
+  // Groom Portraits
+  // ==========================
+
 
 {
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/m4.jpg"
+  category: "Groom Portraits",
+  image: "../../assets/services/wedding/Groom/A (1).webp"
 },
 {
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/m5.jpg"
+  category: "Groom Portraits",
+  image: "../../assets/services/wedding/Groom/A (2).webp"
 },
 {
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/m6.jpg"
+  category: "Groom Portraits",
+  image: "../../assets/services/wedding/Groom/A (3).webp"
 },
 {
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/m7.jpg"
+  category: "Groom Portraits",
+  image: "../../assets/services/wedding/Groom/A (4).webp"
 },
 {
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (5).JPG"
+  category: "Groom Portraits",
+  image: "../../assets/services/wedding/Groom/A (5).webp"
 },
 {
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (6).JPG"
+  category: "Groom Portraits",
+  image: "../../assets/services/wedding/Groom/A (6).webp"
 },
 {
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (7).JPG"
+  category: "Groom Portraits",
+  image: "../../assets/services/wedding/Groom/A (7).webp"
 },
 {
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (8).JPG"
+  category: "Groom Portraits",
+  image: "../../assets/services/wedding/Groom/A (8).webp"
 },
 {
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/m3.jpg"
+  category: "Groom Portraits",
+  image: "../../assets/services/wedding/Groom/A (9).webp"
+},
+
+
+
+
+
+
+
+  // ==========================
+  // Couple Portraits
+  // ==========================
+
+
+{
+  category: "Couple Portraits",
+  image: "../../assets/services/wedding/Couple/A (1).webp"
 },
 {
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/m2.jpg"
+  category: "Couple Portraits",
+  image: "../../assets/services/wedding/Couple/A (2).webp"
 },
 {
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/m1.jpg"
+  category: "Couple Portraits",
+  image: "../../assets/services/wedding/Couple/A (3).webp"
 },
 {
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (12).JPG"
+  category: "Couple Portraits",
+  image: "../../assets/services/wedding/Couple/A (4).webp"
 },
 {
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (13).JPG"
+  category: "Couple Portraits",
+  image: "../../assets/services/wedding/Couple/A (5).webp"
 },
 {
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (14).JPG"
+  category: "Couple Portraits",
+  image: "../../assets/services/wedding/Couple/A (6).webp"
 },
 {
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (15).JPG"
+  category: "Couple Portraits",
+  image: "../../assets/services/wedding/Couple/A (7).webp"
 },
 {
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (16).JPG"
+  category: "Couple Portraits",
+  image: "../../assets/services/wedding/Couple/A (8).webp"
 },
 {
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (17).JPG"
+  category: "Couple Portraits",
+  image: "../../assets/services/wedding/Couple/A (9).webp"
 },
 {
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (18).JPG"
+  category: "Couple Portraits",
+  image: "../../assets/services/wedding/Couple/A (10).webp"
 },
 {
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (19).JPG"
+  category: "Couple Portraits",
+  image: "../../assets/services/wedding/Couple/A (11).webp"
 },
 {
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (20).JPG"
+  category: "Couple Portraits",
+  image: "../../assets/services/wedding/Couple/A (12).webp"
 },
 {
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (21).JPG"
+  category: "Couple Portraits",
+  image: "../../assets/services/wedding/Couple/A (13).webp"
 },
 {
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (22).JPG"
+  category: "Couple Portraits",
+  image: "../../assets/services/wedding/Couple/A (14).webp"
 },
 {
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (23).JPG"
+  category: "Couple Portraits",
+  image: "../../assets/services/wedding/Couple/A (15).webp"
 },
 {
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (24).JPG"
-},
-{
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (25).JPG"
-},
-{
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (26).JPG"
-},
-{
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (27).JPG"
-},
-{
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (28).JPG"
-},
-{
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (29).JPG"
-},
-{
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (30).JPG"
-},
-{
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (31).JPG"
-},
-{
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (32).JPG"
-},
-{
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (33).JPG"
-},
-{
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (34).JPG"
-},
-{
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (35).JPG"
-},
-{
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (36).JPG"
-},
-{
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (37).JPG"
-},
-{
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (38).JPG"
-},
-{
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/01 (39).JPG"
-},
-{
-  category: "Wedding Shoot",
-  image: "../../assets/services/wedding/ceremony/m.jpg"
+  category: "Couple Portraits",
+  image: "../../assets/services/wedding/Couple/A (16).webp"
 },
 
 
@@ -270,50 +236,132 @@ window.galleryData = [
 
 
 
- // ==========================
-// Reception Shoot
-// ==========================
+
+
+
+
+  // ==========================
+  // Wedding Ceremony
+  // ==========================
+
 
 {
-  category: "Reception Shoot",
-  image: "../../assets/services/wedding/reception/01 (1).jpg"
+  category: "Wedding Ceremony",
+  image: "../../assets/services/wedding/Wedding Ceremony/A (1).webp"
 },
 {
-  category: "Reception Shoot",
-  image: "../../assets/services/wedding/reception/01 (2).jpg"
+  category: "Wedding Ceremony",
+  image: "../../assets/services/wedding/Wedding Ceremony/A (2).webp"
 },
 {
-  category: "Reception Shoot",
-  image: "../../assets/services/wedding/reception/01 (3).jpg"
+  category: "Wedding Ceremony",
+  image: "../../assets/services/wedding/Wedding Ceremony/A (3).webp"
 },
 {
-  category: "Reception Shoot",
-  image: "../../assets/services/wedding/reception/01 (4).jpg"
+  category: "Wedding Ceremony",
+  image: "../../assets/services/wedding/Wedding Ceremony/A (4).webp"
 },
 {
-  category: "Reception Shoot",
-  image: "../../assets/services/wedding/reception/01 (5).jpg"
+  category: "Wedding Ceremony",
+  image: "../../assets/services/wedding/Wedding Ceremony/A (5).webp"
 },
 {
-  category: "Reception Shoot",
-  image: "../../assets/services/wedding/reception/01 (6).jpg"
+  category: "Wedding Ceremony",
+  image: "../../assets/services/wedding/Wedding Ceremony/A (6).webp"
 },
 {
-  category: "Reception Shoot",
-  image: "../../assets/services/wedding/reception/01 (7).jpg"
+  category: "Wedding Ceremony",
+  image: "../../assets/services/wedding/Wedding Ceremony/A (7).webp"
 },
 {
-  category: "Reception Shoot",
-  image: "../../assets/services/wedding/reception/01 (8).jpg"
+  category: "Wedding Ceremony",
+  image: "../../assets/services/wedding/Wedding Ceremony/A (8).webp"
 },
 {
-  category: "Reception Shoot",
-  image: "../../assets/services/wedding/reception/01 (9).jpg"
+  category: "Wedding Ceremony",
+  image: "../../assets/services/wedding/Wedding Ceremony/A (9).webp"
 },
 {
-  category: "Reception Shoot",
-  image: "../../assets/services/wedding/reception/01 (10).jpg"
+  category: "Wedding Ceremony",
+  image: "../../assets/services/wedding/Wedding Ceremony/A (10).webp"
 },
+{
+  category: "Wedding Ceremony",
+  image: "../../assets/services/wedding/Wedding Ceremony/A (11).webp"
+},
+{
+  category: "Wedding Ceremony",
+  image: "../../assets/services/wedding/Wedding Ceremony/A (12).webp"
+},
+{
+  category: "Wedding Ceremony",
+  image: "../../assets/services/wedding/Wedding Ceremony/A (13).webp"
+},
+{
+  category: "Wedding Ceremony",
+  image: "../../assets/services/wedding/Wedding Ceremony/A (14).webp"
+},
+{
+  category: "Wedding Ceremony",
+  image: "../../assets/services/wedding/Wedding Ceremony/A (15).webp"
+},
+{
+  category: "Wedding Ceremony",
+  image: "../../assets/services/wedding/Wedding Ceremony/A (16).webp"
+},
+{
+  category: "Wedding Ceremony",
+  image: "../../assets/services/wedding/Wedding Ceremony/A (17).webp"
+},
+{
+  category: "Wedding Ceremony",
+  image: "../../assets/services/wedding/Wedding Ceremony/A (18).webp"
+},
+{
+  category: "Wedding Ceremony",
+  image: "../../assets/services/wedding/Wedding Ceremony/A (19).webp"
+},
+{
+  category: "Wedding Ceremony",
+  image: "../../assets/services/wedding/Wedding Ceremony/A (20).webp"
+},
+{
+  category: "Wedding Ceremony",
+  image: "../../assets/services/wedding/Wedding Ceremony/A (21).webp"
+},
+{
+  category: "Wedding Ceremony",
+  image: "../../assets/services/wedding/Wedding Ceremony/A (22).webp"
+},
+{
+  category: "Wedding Ceremony",
+  image: "../../assets/services/wedding/Wedding Ceremony/A (23).webp"
+},
+{
+  category: "Wedding Ceremony",
+  image: "../../assets/services/wedding/Wedding Ceremony/A (24).webp"
+},
+{
+  category: "Wedding Ceremony",
+  image: "../../assets/services/wedding/Wedding Ceremony/A (25).webp"
+},
+{
+  category: "Wedding Ceremony",
+  image: "../../assets/services/wedding/Wedding Ceremony/A (26).webp"
+},
+{
+  category: "Wedding Ceremony",
+  image: "../../assets/services/wedding/Wedding Ceremony/A (27).webp"
+},
+
+
+
 
 
 ];
+
+
+
+
+
+
