@@ -2,176 +2,150 @@
 
 window.galleryData = [
 
-  // ==========================
-  // Mehendi Shoot
-  // ==========================
 
-  {
-  category: "mehendi Shoot",
-  image: "../../assets/services/pre-wedding/mehendi/01(1).jpg"
-},
-{
-  category: "mehendi Shoot",
-  image: "../../assets/services/pre-wedding/mehendi/A.jpg"
-},
-{
-  category: "mehendi Shoot",
-  image: "../../assets/services/pre-wedding/mehendi/01(3).jpg"
-},
-{ 
-  category: "mehendi Shoot",
-  image: "../../assets/services/pre-wedding/mehendi/01(4).jpg"
-},
-{
-  category: "mehendi Shoot",
-  image: "../../assets/services/pre-wedding/mehendi/01(5).jpg"
-},
-{
-  category: "mehendi Shoot",
-  image: "../../assets/services/pre-wedding/mehendi/01(6).jpg"
-},
-{
-  category: "mehendi Shoot",
-  image: "../../assets/services/pre-wedding/mehendi/01(7).jpg"
-},
-{
-  category: "mehendi Shoot",
-  image: "../../assets/services/pre-wedding/mehendi/01(8).jpg"
-},
-{
-  category: "mehendi Shoot",
-  image: "../../assets/services/pre-wedding/mehendi/01(9).jpg"
-},
-{
-  category: "mehendi Shoot",
-  image: "../../assets/services/pre-wedding/mehendi/01(10).jpg"
-},
-{
-  category: "mehendi Shoot",
-  image: "../../assets/services/pre-wedding/mehendi/01(11).jpg"
-},
-{
-  category: "mehendi Shoot",
-  image: "../../assets/services/pre-wedding/mehendi/01(12).jpg"
-},
-{
-  category: "mehendi Shoot",
-  image: "../../assets/services/pre-wedding/mehendi/01(13).jpg"
-},
-{
-  category: "mehendi Shoot",
-  image: "../../assets/services/pre-wedding/mehendi/01(14).jpg"
-},
 
 
 
   // ==========================
-  // haldi Shoot
+  // haldi shoot
   // ==========================
 
 
   {
-  category: "haldi Shoot",
-  image: "../../assets/services/pre-wedding/haldi/01 (1).jpg"
+  category: "haldi",
+  image: "../../assets/services/pre-wedding/haldi/01 (1).webp"
 },
 {
-  category: "haldi Shoot",
-  image: "../../assets/services/pre-wedding/haldi/01 (2).jpg"
+  category: "haldi",
+  image: "../../assets/services/pre-wedding/haldi/C.jpg"
+},
+
+
+{
+  category: "haldi",
+  image: "../../assets/services/pre-wedding/haldi/01 (2).webp"
 },
 {
-  category: "haldi Shoot",
-  image: "../../assets/services/pre-wedding/haldi/01 (3).jpg"
+  category: "haldi",
+  image: "../../assets/services/pre-wedding/haldi/01 (3).webp"
 },
 {
-  category: "haldi Shoot",
-  image: "../../assets/services/pre-wedding/haldi/01 (4).jpg"
+  category: "haldi",
+  image: "../../assets/services/pre-wedding/haldi/01 (4).webp"
 },
 {
-  category: "haldi Shoot",
-  image: "../../assets/services/pre-wedding/haldi/01 (5).jpg"
+  category: "haldi",
+  image: "../../assets/services/pre-wedding/haldi/01 (5).webp"
 },
 {
-  category: "haldi Shoot",
-  image: "../../assets/services/pre-wedding/haldi/01 (6).jpg"
+  category: "haldi",
+  image: "../../assets/services/pre-wedding/haldi/01 (6).webp"
 },
 {
-  category: "haldi Shoot",
-  image: "../../assets/services/pre-wedding/haldi/01 (7).jpg"
+  category: "haldi",
+  image: "../../assets/services/pre-wedding/haldi/01 (7).webp"
 },
 {
-  category: "haldi Shoot",
-  image: "../../assets/services/pre-wedding/haldi/01 (8).JPG"
+  category: "haldi",
+  image: "../../assets/services/pre-wedding/haldi/01 (8).webp"
 },
 {
-  category: "haldi Shoot",
-  image: "../../assets/services/pre-wedding/haldi/01 (9).JPG"
+  category: "haldi",
+  image: "../../assets/services/pre-wedding/haldi/01 (9).webp"
 },
 {
-  category: "haldi Shoot",
-  image: "../../assets/services/pre-wedding/haldi/01 (10).JPG"
+  category: "haldi",
+  image: "../../assets/services/pre-wedding/haldi/01 (10).webp"
 },
 {
-  category: "haldi Shoot",
-  image: "../../assets/services/pre-wedding/haldi/01 (11).JPG"
+  category: "haldi",
+  image: "../../assets/services/pre-wedding/haldi/01 (11).webp"
+},
+
+
+
+
+
+  // ==========================
+  // mehendi shoot
+  // ==========================
+
+
+  {
+  category: "mehendi",
+  image: "../../assets/services/pre-wedding/mehendi/01 (1).webp"
+},
+
+{
+  category: "mehendi",
+  image: "../../assets/services/pre-wedding/mehendi/01 (2).webp"
 },
 {
-  category: "haldi Shoot",
-  image: "../../assets/services/pre-wedding/haldi/01 (12).JPG"
+  category: "mehendi",
+  image: "../../assets/services/pre-wedding/mehendi/01 (3).webp"
 },
 {
-  category: "haldi Shoot",
-  image: "../../assets/services/pre-wedding/haldi/01 (13).JPG"
+  category: "mehendi",
+  image: "../../assets/services/pre-wedding/mehendi/01 (4).webp"
 },
 {
-  category: "haldi Shoot",
-  image: "../../assets/services/pre-wedding/haldi/01 (14).JPG"
+  category: "mehendi",
+  image: "../../assets/services/pre-wedding/mehendi/01 (5).webp"
 },
 {
-  category: "haldi Shoot",
-  image: "../../assets/services/pre-wedding/haldi/01 (15).JPG"
+  category: "mehendi",
+  image: "../../assets/services/pre-wedding/mehendi/01 (6).webp"
+},
+{
+  category: "mehendi",
+  image: "../../assets/services/pre-wedding/mehendi/01 (7).webp"
+},
+{
+  category: "mehendi",
+  image: "../../assets/services/pre-wedding/mehendi/01 (8).webp"
 },
 
 
 
   // ==========================
-  // Engagement Shoot
+  // Engagement
   // ==========================
 
   {
-  category: "Engagement Shoot",
-  image: "../../assets/services/pre-wedding/Engagement/01 (1).JPG"
+  category: "Engagement",
+  image: "../../assets/services/pre-wedding/Engagement/01 (1).webp"
 },
 {
-  category: "Engagement Shoot",
-  image: "../../assets/services/pre-wedding/Engagement/01 (2).JPG"
+  category: "Engagement",
+  image: "../../assets/services/pre-wedding/Engagement/01 (2).webp"
 },
 {
-  category: "Engagement Shoot",
-  image: "../../assets/services/pre-wedding/Engagement/01 (3).JPG"
+  category: "Engagement",
+  image: "../../assets/services/pre-wedding/Engagement/01 (3).webp"
 },
 {
-  category: "Engagement Shoot",
-  image: "../../assets/services/pre-wedding/Engagement/01 (4).JPG"
+  category: "Engagement",
+  image: "../../assets/services/pre-wedding/Engagement/01 (4).webp"
 },
 {
-  category: "Engagement Shoot",
-  image: "../../assets/services/pre-wedding/Engagement/01 (5).JPG"
+  category: "Engagement",
+  image: "../../assets/services/pre-wedding/Engagement/01 (5).webp"
 },
 {
-  category: "Engagement Shoot",
-  image: "../../assets/services/pre-wedding/Engagement/01 (6).JPG"
+  category: "Engagement",
+  image: "../../assets/services/pre-wedding/Engagement/01 (6).webp"
 },
 {
-  category: "Engagement Shoot",
-  image: "../../assets/services/pre-wedding/Engagement/01 (7).JPG"
+  category: "Engagement",
+  image: "../../assets/services/pre-wedding/Engagement/01 (7).webp"
 },
 {
-  category: "Engagement Shoot",
-  image: "../../assets/services/pre-wedding/Engagement/01 (8).JPG"
+  category: "Engagement",
+  image: "../../assets/services/pre-wedding/Engagement/01 (8).webp"
 },
 {
-  category: "Engagement Shoot",
-  image: "../../assets/services/pre-wedding/Engagement/01 (9).JPG"
+  category: "Engagement",
+  image: "../../assets/services/pre-wedding/Engagement/01 (9).webp"
 },
 
 
@@ -181,63 +155,63 @@ window.galleryData = [
 // ==========================
 
 {
-  category: "candid-portrait Shoot",
-  image: "../../assets/services/pre-wedding/candid-portrait/01 (1).jpg"
+  category: "Portraits",
+  image: "../../assets/services/pre-wedding/Portraits/01 (1).webp"
 },
 {
-  category: "candid-portrait Shoot",
-  image: "../../assets/services/pre-wedding/candid-portrait/01 (2).jpg"
+  category: "Portraits",
+  image: "../../assets/services/pre-wedding/Portraits/01 (2).webp"
 },
 {
-  category: "candid-portrait Shoot",
-  image: "../../assets/services/pre-wedding/candid-portrait/01 (3).jpg"
+  category: "Portraits",
+  image: "../../assets/services/pre-wedding/Portraits/01 (3).webp"
 },
 {
-  category: "candid-portrait Shoot",
-  image: "../../assets/services/pre-wedding/candid-portrait/01 (4).jpg"
+  category: "Portraits",
+  image: "../../assets/services/pre-wedding/Portraits/01 (4).webp"
 },
 {
-  category: "candid-portrait Shoot",
-  image: "../../assets/services/pre-wedding/candid-portrait/01 (5).jpg"
+  category: "Portraits",
+  image: "../../assets/services/pre-wedding/Portraits/01 (5).webp"
 },
 {
-  category: "candid-portrait Shoot",
-  image: "../../assets/services/pre-wedding/candid-portrait/01 (6).jpg"
+  category: "Portraits",
+  image: "../../assets/services/pre-wedding/Portraits/01 (6).webp"
 },
 {
-  category: "candid-portrait Shoot",
-  image: "../../assets/services/pre-wedding/candid-portrait/01 (7).jpg"
+  category: "Portraits",
+  image: "../../assets/services/pre-wedding/Portraits/01 (7).webp"
 },
 {
-  category: "candid-portrait Shoot",
-  image: "../../assets/services/pre-wedding/candid-portrait/01 (8).jpg"
+  category: "Portraits",
+  image: "../../assets/services/pre-wedding/Portraits/01 (8).webp"
 },
 {
-  category: "candid-portrait Shoot",
-  image: "../../assets/services/pre-wedding/candid-portrait/01 (9).jpg"
+  category: "Portraits",
+  image: "../../assets/services/pre-wedding/Portraits/01 (9).webp"
 },
 {
-  category: "candid-portrait Shoot",
-  image: "../../assets/services/pre-wedding/candid-portrait/01 (10).jpg"
+  category: "Portraits",
+  image: "../../assets/services/pre-wedding/Portraits/01 (10).webp"
 },{
-  category: "candid-portrait Shoot",
-  image: "../../assets/services/pre-wedding/candid-portrait/01 (11).jpg"
+  category: "Portraits",
+  image: "../../assets/services/pre-wedding/Portraits/01 (11).webp"
 },{
-  category: "candid-portrait Shoot",
-  image: "../../assets/services/pre-wedding/candid-portrait/01 (12).JPG"
+  category: "Portraits",
+  image: "../../assets/services/pre-wedding/Portraits/01 (12).webp"
 },{
-  category: "candid-portrait Shoot",
-  image: "../../assets/services/pre-wedding/candid-portrait/01 (13).jpg"
+  category: "Portraits",
+  image: "../../assets/services/pre-wedding/Portraits/01 (13).webp"
 },{
-  category: "candid-portrait Shoot",
-  image: "../../assets/services/pre-wedding/candid-portrait/01 (14).JPG"
+  category: "Portraits",
+  image: "../../assets/services/pre-wedding/Portraits/01 (14).webp"
 },{
-  category: "candid-portrait Shoot",
-  image: "../../assets/services/pre-wedding/candid-portrait/01 (15).jpg"
+  category: "Portraits",
+  image: "../../assets/services/pre-wedding/Portraits/01 (15).webp"
 },
 {
-  category: "candid-portrait Shoot",
-  image: "../../assets/services/pre-wedding/candid-portrait/01 (16).jpg"
+  category: "Portraits",
+  image: "../../assets/services/pre-wedding/Portraits/01 (16).webp"
 },
 
 
