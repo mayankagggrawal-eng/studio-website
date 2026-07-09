@@ -73,36 +73,36 @@ window.galleryData = [
 
   {
   category: "mehendi",
-  image: "../../assets/services/pre-wedding/mehendi/A (1).webp"
+  image: "../../assets/services/pre-wedding/mehendi/A (1).jpg"
 },
 
 {
   category: "mehendi",
-  image: "../../assets/services/pre-wedding/mehendi/A (2).webp"
+  image: "../../assets/services/pre-wedding/mehendi/A (2).jpg"
 },
 {
   category: "mehendi",
-  image: "../../assets/services/pre-wedding/mehendi/A (3).webp"
+  image: "../../assets/services/pre-wedding/mehendi/A (3).jpg"
 },
 {
   category: "mehendi",
-  image: "../../assets/services/pre-wedding/mehendi/A (4).webp"
+  image: "../../assets/services/pre-wedding/mehendi/A (4).jpg"
 },
 {
   category: "mehendi",
-  image: "../../assets/services/pre-wedding/mehendi/A (5).webp"
+  image: "../../assets/services/pre-wedding/mehendi/A (5).jpg"
 },
 {
   category: "mehendi",
-  image: "../../assets/services/pre-wedding/mehendi/A (6).webp"
+  image: "../../assets/services/pre-wedding/mehendi/A (6).jpg"
 },
 {
   category: "mehendi",
-  image: "../../assets/services/pre-wedding/mehendi/A (7).webp"
+  image: "../../assets/services/pre-wedding/mehendi/A (7).jpg"
 },
 {
   category: "mehendi",
-  image: "../../assets/services/pre-wedding/mehendi/A (8).webp"
+  image: "../../assets/services/pre-wedding/mehendi/A (8).jpg"
 },
 
 
