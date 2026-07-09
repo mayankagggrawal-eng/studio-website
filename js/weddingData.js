@@ -345,14 +345,7 @@ window.galleryData = [
   category: "Wedding Ceremony",
   image: "../../assets/services/wedding/Wedding Ceremony/A (25).webp"
 },
-{
-  category: "Wedding Ceremony",
-  image: "../../assets/services/wedding/Wedding Ceremony/A (26).webp"
-},
-{
-  category: "Wedding Ceremony",
-  image: "../../assets/services/wedding/Wedding Ceremony/A (27).webp"
-},
+
 
 
 
