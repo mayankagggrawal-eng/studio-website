@@ -13,7 +13,7 @@ window.galleryData = [
 
   {
   category: "haldi",
-  image: "../../assets/services/pre-wedding/haldi/01 (1).webp"
+  image: "../../assets/services/pre-wedding/haldi/A (1).webp"
 },
 {
   category: "haldi",
