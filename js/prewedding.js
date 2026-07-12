@@ -199,19 +199,6 @@ window.galleryData = [
 },{
   category: "Portraits",
   image: "../../assets/services/pre-wedding/Portraits/A (12).webp"
-},{
-  category: "Portraits",
-  image: "../../assets/services/pre-wedding/Portraits/A (13).webp"
-},{
-  category: "Portraits",
-  image: "../../assets/services/pre-wedding/Portraits/A (14).webp"
-},{
-  category: "Portraits",
-  image: "../../assets/services/pre-wedding/Portraits/A (15).webp"
-},
-{
-  category: "Portraits",
-  image: "../../assets/services/pre-wedding/Portraits/A (16).webp"
 },
 
 

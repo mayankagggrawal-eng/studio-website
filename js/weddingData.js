@@ -133,7 +133,13 @@ window.galleryData = [
   category: "Groom Portraits",
   image: "../../assets/services/wedding/Groom/A (9).webp"
 },
-
+{
+  category: "Groom Portraits",
+  image: "../../assets/services/wedding/Groom/A (10).webp"
+},{
+  category: "Groom Portraits",
+  image: "../../assets/services/wedding/Groom/A (11).webp"
+},
 
 
 
