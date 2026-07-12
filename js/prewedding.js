@@ -17,7 +17,7 @@ window.galleryData = [
 },
 {
   category: "haldi",
-  image: "../../assets/services/pre-wedding/haldi/C.jpg"
+  image: "../../assets/services/pre-wedding/haldi/C.webp"
 },
 
 
@@ -73,36 +73,36 @@ window.galleryData = [
 
   {
   category: "mehendi",
-  image: "../../assets/services/pre-wedding/mehendi/A (1).jpg"
+  image: "../../assets/services/pre-wedding/mehendi/A (1).webp"
 },
 
 {
   category: "mehendi",
-  image: "../../assets/services/pre-wedding/mehendi/A (2).jpg"
+  image: "../../assets/services/pre-wedding/mehendi/A (2).webp"
 },
 {
   category: "mehendi",
-  image: "../../assets/services/pre-wedding/mehendi/A (3).jpg"
+  image: "../../assets/services/pre-wedding/mehendi/A (3).webp"
 },
 {
   category: "mehendi",
-  image: "../../assets/services/pre-wedding/mehendi/A (4).jpg"
+  image: "../../assets/services/pre-wedding/mehendi/A (4).webp"
 },
 {
   category: "mehendi",
-  image: "../../assets/services/pre-wedding/mehendi/A (5).jpg"
+  image: "../../assets/services/pre-wedding/mehendi/A (5).webp"
 },
 {
   category: "mehendi",
-  image: "../../assets/services/pre-wedding/mehendi/A (6).jpg"
+  image: "../../assets/services/pre-wedding/mehendi/A (6).webp"
 },
 {
   category: "mehendi",
-  image: "../../assets/services/pre-wedding/mehendi/A (7).jpg"
+  image: "../../assets/services/pre-wedding/mehendi/A (7).webp"
 },
 {
   category: "mehendi",
-  image: "../../assets/services/pre-wedding/mehendi/A (8).jpg"
+  image: "../../assets/services/pre-wedding/mehendi/A (8).webp"
 },
 
 
