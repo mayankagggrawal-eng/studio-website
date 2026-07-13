@@ -1947,7 +1947,7 @@ border:1px solid color-mix(in srgb, var(--accent) 40%, transparent);    border-r
 
     position:relative;
 
-    background:url("../assets/services/events/IMG1.png")
+    background:url("../assets/services/events/IMG1.webp")
     center center/cover no-repeat;
 
     background-attachment:fixed;
