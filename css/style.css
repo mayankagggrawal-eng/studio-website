@@ -2034,17 +2034,7 @@ border:1px solid color-mix(in srgb, var(--accent) 40%, transparent);    border-r
   box-shadow: 0 15px 40px color-mix(in srgb, var(--accent) 30%, transparent);
 }
 
-.scroll-indicator {
-  position: absolute;
-  bottom: 25px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 5;
-color: var(--accent);  font-size: 13px;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  animation: floatScroll 2s infinite;
-}
+
 
 @keyframes floatScroll {
   0% { transform: translate(-50%, 0); }
@@ -2122,6 +2112,26 @@ background: var(--accent);  color: var(--bg);
   box-shadow: 0 12px 25px color-mix(in srgb, var(--accent) 30%, transparent);
 }
 
+.gallery-categories,
+.wedding-gallery{
+    position: relative;
+}
+
+.gallery-categories::before,
+.wedding-gallery::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    z-index: 0;
+}
+
+.gallery-categories > *,
+.wedding-gallery > *{
+    position: relative;
+    z-index: 1;
+}
+
 @media (max-width: 768px) {
   .category-grid {
     gap: 12px;
@@ -2132,13 +2142,6 @@ background: var(--accent);  color: var(--bg);
     font-size: 14px;
   }
 
-.gallery-categories::before,
-.wedding-gallery::before{
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.65);
-}
   .gallery-categories .section-title {
     font-size: 30px;
   }
@@ -2150,7 +2153,7 @@ background: var(--accent);  color: var(--bg);
 
 .wedding-gallery {
   padding: 80px 8%;
-  background: var(--bg);
+  background: transparent;
 }
 
 .gallery-grid {
@@ -2500,21 +2503,7 @@ border-color: var(--accent);  box-shadow: 0 15px 40px color-mix(in srgb, var(--a
   color: white;
 }
 
-.event-hero .scroll-indicator {
-  position: absolute;
-  bottom: 25px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 4;
-
-  color: var(--gold);
-  font-size: 13px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-
-  animation: floatScroll 2s infinite;
-}
-
+.event-hero 
 @keyframes floatScroll {
   0% { transform: translate(-50%, 0); }
   50% { transform: translate(-50%, 10px); }
@@ -2672,6 +2661,19 @@ border-color: var(--accent);  box-shadow: 0 15px 40px color-mix(in srgb, var(--a
 
 height:300px;
 
+}
+
+.gallery-card[data-category="album"] .content h2{
+    color:#D4AF37;
+    font-size:26px;
+    font-weight:700;
+}
+
+.gallery-card[data-category="album"] .content p{
+    color:#ffffff;
+    opacity:.9;
+    font-size:15px;
+    letter-spacing:.5px;
 }
 .gallery-grid{
 

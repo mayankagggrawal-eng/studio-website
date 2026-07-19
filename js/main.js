@@ -354,7 +354,6 @@ document.addEventListener("DOMContentLoaded", () => {
 /* ===============================
    GALLERY CARD NAVIGATION
 ================================ */
-
 document.addEventListener("DOMContentLoaded", () => {
 
     const cards = document.querySelectorAll(".gallery-card");
@@ -365,23 +364,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const target = card.dataset.category;
 
-            if (!target) return;
+            switch (target) {
 
-            const section = document.getElementById(target);
+                case "wedding":
+                    window.location.href = "wedding.html";
+                    break;
 
-            if (!section) {
+                case "prewedding":
+                    window.location.href = "prewedding.html";
+                    break;
 
-                console.warn(`Section "${target}" not found.`);
-                return;
+                case "events":
+                    window.location.href = "events.html";
+                    break;
+
+                case "album":
+    console.log("Album clicked");
+    console.log(window.location.href);
+    window.location.href = "./album.html";
+    break;
 
             }
-
-            section.scrollIntoView({
-
-                behavior: "smooth",
-                block: "start"
-
-            });
 
         });
 
