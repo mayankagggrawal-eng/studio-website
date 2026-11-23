@@ -1,84 +1,94 @@
-/* =================================
-   NEW PRATIBHA DIGITAL STUDIO
-   PREMIUM BACKGROUND MUSIC PLAYER
-================================= */
-
 document.addEventListener("DOMContentLoaded", function () {
 
-    const button = document.getElementById("musicToggle");
+    const musicButton = document.getElementById("musicToggle");
 
-    if (!button) return;
+    if (!musicButton) return;
 
-    let music = null;
+    const musicIcon = musicButton.querySelector(".music-icon");
+    const musicLabel = musicButton.querySelector(".music-label");
+
+    const STORAGE_KEY = "studioMusicState";
+    const TIME_KEY = "studioMusicTime";
+
+    const audio = new Audio("/assets/music/studio-instrumental.mp3");
+
+    audio.loop = true;
+    audio.volume = 0.20;
+    audio.preload = "auto";
+
     let isPlaying = false;
 
-    button.addEventListener("click", async function () {
+    function updateButton(playing) {
+        isPlaying = playing;
 
-        if (!music) {
+        musicButton.classList.toggle("is-playing", playing);
+        musicButton.setAttribute("aria-pressed", String(playing));
+        musicButton.setAttribute(
+            "aria-label",
+            playing ? "Pause background music" : "Play background music"
+        );
 
-            music = new Audio(
-                "/assets/music/studio instrumental.mpeg"
-            );
-
-            music.loop = true;
-            music.volume = 0.20;
-            music.preload = "none";
-
+        if (musicLabel) {
+            musicLabel.textContent = playing ? "Music On" : "Music Off";
         }
 
-        if (!isPlaying) {
-
-            try {
-
-                await music.play();
-
-                isPlaying = true;
-
-                button.classList.add("is-playing");
-
-                button.querySelector(".music-label").textContent =
-                    "Music On";
-
-                button.setAttribute("aria-pressed", "true");
-
-                button.setAttribute(
-                    "aria-label",
-                    "Pause background music"
-                );
-
-            }
-
-            catch (error) {
-
-                console.error("Music playback error:", error);
-
-                button.querySelector(".music-label").textContent =
-                    "Try Again";
-
-            }
-
+        if (musicIcon) {
+            musicIcon.textContent = playing ? "♫" : "♫";
         }
+    }
 
-        else {
+    async function playMusic() {
+        try {
+            const savedTime = Number(localStorage.getItem(TIME_KEY)) || 0;
 
-            music.pause();
+            if (savedTime > 0 && Number.isFinite(savedTime)) {
+                audio.currentTime = savedTime;
+            }
 
-            isPlaying = false;
+            await audio.play();
 
-            button.classList.remove("is-playing");
+            localStorage.setItem(STORAGE_KEY, "on");
+            updateButton(true);
 
-            button.querySelector(".music-label").textContent =
-                "Music Off";
+        } catch (error) {
+            updateButton(false);
+            console.log("Music playback needs user interaction.");
+        }
+    }
 
-            button.setAttribute("aria-pressed", "false");
+    function stopMusic() {
+        audio.pause();
 
-            button.setAttribute(
-                "aria-label",
-                "Play background music"
-            );
+        localStorage.setItem(STORAGE_KEY, "off");
+        localStorage.removeItem(TIME_KEY);
 
+        updateButton(false);
+    }
+
+    musicButton.addEventListener("click", function () {
+
+        if (isPlaying) {
+            stopMusic();
+        } else {
+            playMusic();
         }
 
     });
 
-});ś
+    // Save music position periodically
+    audio.addEventListener("timeupdate", function () {
+        if (!audio.paused) {
+            localStorage.setItem(TIME_KEY, audio.currentTime);
+        }
+    });
+
+    // Restore previous music state on every page
+    const savedState = localStorage.getItem(STORAGE_KEY);
+
+    if (savedState === "on") {
+        playMusic();
+    } else {
+        updateButton(false);
+    }
+
+});
