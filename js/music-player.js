@@ -41,14 +41,16 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
             const savedTime = Number(localStorage.getItem(TIME_KEY)) || 0;
 
-            if (savedTime > 0 && Number.isFinite(savedTime)) {
-                audio.currentTime = savedTime;
-            }
+if (savedTime > 0 && Number.isFinite(savedTime)) {
+    await new Promise(resolve => {
+        audio.addEventListener("loadedmetadata", resolve, { once: true });
+        audio.load();
+    });
 
-            await audio.play();
-
-            localStorage.setItem(STORAGE_KEY, "on");
-            updateButton(true);
+    if (Number.isFinite(audio.duration) && audio.duration > 0) {
+        audio.currentTime = savedTime % audio.duration;
+    }
+}
 
         } catch (error) {
             updateButton(false);
