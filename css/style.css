@@ -3250,3 +3250,200 @@ canvas {
 .image-frame img {
     pointer-events: none;
 }
+
+/* =========================================
+   LUXURY GOLD MUSIC PLAYER
+========================================= */
+
+.music-toggle {
+    position: fixed;
+    left: clamp(12px, 2vw, 20px);
+    bottom: calc(18px + env(safe-area-inset-bottom));
+    z-index: 100000;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    padding: 11px 17px;
+    border-radius: 50px;
+
+    background: linear-gradient(
+        135deg,
+        #17130b,
+        #29200d,
+        #100e09
+    );
+
+    color: #f5d77b;
+    border: 1px solid #d4af37;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    white-space: nowrap;
+
+    cursor: pointer;
+    overflow: hidden;
+    isolation: isolate;
+
+    box-shadow:
+        0 0 12px rgba(212,175,55,0.35),
+        inset 0 0 10px rgba(212,175,55,0.10);
+
+    animation: musicGoldPulse 2.5s infinite;
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Moving Golden Shine */
+
+.music-toggle::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -100%;
+
+    width: 45%;
+    height: 200%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.35),
+        transparent
+    );
+
+    transform: rotate(25deg);
+    animation: musicShine 4s infinite;
+
+    pointer-events: none;
+}
+
+/* Music Icon */
+
+.music-icon {
+    font-size: 19px;
+    line-height: 1;
+    color: #f5d77b;
+
+    text-shadow: 0 0 9px rgba(255,215,100,0.7);
+}
+
+/* Button Label */
+
+.music-label {
+    position: relative;
+    z-index: 1;
+}
+
+/* Outer Golden Pulse */
+
+@keyframes musicGoldPulse {
+    0%, 100% {
+        box-shadow:
+            0 0 10px rgba(212,175,55,0.25),
+            0 0 0 0 rgba(212,175,55,0.25);
+    }
+
+    50% {
+        box-shadow:
+            0 0 17px rgba(212,175,55,0.55),
+            0 0 0 6px rgba(212,175,55,0.08);
+    }
+}
+
+/* Shine Animation */
+
+@keyframes musicShine {
+    0%, 65% {
+        left: -100%;
+    }
+
+    100% {
+        left: 150%;
+    }
+}
+
+/* Playing State */
+
+.music-toggle.is-playing {
+    background: linear-gradient(
+        135deg,
+        #d4af37,
+        #f5d77b,
+        #b8860b
+    );
+
+    color: #17120a;
+
+    box-shadow:
+        0 0 18px rgba(212,175,55,0.65),
+        0 0 30px rgba(212,175,55,0.25);
+}
+
+.music-toggle.is-playing .music-icon {
+    color: #17120a;
+    text-shadow: none;
+}
+
+/* Hover Effect */
+
+@media (hover: hover) and (pointer: fine) {
+    .music-toggle:hover {
+        transform: translateY(-3px) scale(1.04);
+    }
+}
+
+/* Keyboard Accessibility */
+
+.music-toggle:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 4px;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .music-toggle {
+        left: 12px;
+        bottom: calc(12px + env(safe-area-inset-bottom));
+
+        padding: 9px 13px;
+        gap: 7px;
+
+        font-size: 11px;
+        letter-spacing: 0.7px;
+    }
+
+    .music-icon {
+        font-size: 17px;
+    }
+}
+
+/* Small Mobile */
+
+@media (max-width: 360px) {
+    .music-toggle {
+        left: 10px;
+        padding: 8px 11px;
+        font-size: 10px;
+    }
+}
+
+/* Reduce Motion Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    .music-toggle,
+    .music-toggle::after {
+        animation: none;
+    }
+
+    .music-toggle {
+        transition: none;
+    }
+}
