@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         musicButton.classList.toggle("is-playing", playing);
         musicButton.setAttribute("aria-pressed", String(playing));
+
         musicButton.setAttribute(
             "aria-label",
             playing ? "Pause background music" : "Play background music"
@@ -33,32 +34,48 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (musicIcon) {
-            musicIcon.textContent = playing ? "♫" : "♫";
+            musicIcon.textContent = "♫";
         }
     }
 
     async function playMusic() {
         try {
+
             const savedTime = Number(localStorage.getItem(TIME_KEY)) || 0;
 
-if (savedTime > 0 && Number.isFinite(savedTime)) {
-    await new Promise(resolve => {
-        audio.addEventListener("loadedmetadata", resolve, { once: true });
-        audio.load();
-    });
+            if (savedTime > 0 && Number.isFinite(savedTime)) {
 
-    if (Number.isFinite(audio.duration) && audio.duration > 0) {
-        audio.currentTime = savedTime % audio.duration;
-    }
-}
+                if (audio.readyState < 1) {
+                    await new Promise((resolve, reject) => {
+
+                        audio.addEventListener("loadedmetadata", resolve, { once: true });
+                        audio.addEventListener("error", reject, { once: true });
+
+                        audio.load();
+                    });
+                }
+
+                if (Number.isFinite(audio.duration) && audio.duration > 0) {
+                    audio.currentTime = savedTime % audio.duration;
+                }
+            }
+
+            await audio.play();
+
+            localStorage.setItem(STORAGE_KEY, "on");
+
+            updateButton(true);
 
         } catch (error) {
+
             updateButton(false);
-            console.log("Music playback needs user interaction.");
+
+            console.error("Music playback error:", error);
         }
     }
 
     function stopMusic() {
+
         audio.pause();
 
         localStorage.setItem(STORAGE_KEY, "off");
@@ -79,12 +96,14 @@ if (savedTime > 0 && Number.isFinite(savedTime)) {
 
     // Save music position periodically
     audio.addEventListener("timeupdate", function () {
+
         if (!audio.paused) {
             localStorage.setItem(TIME_KEY, audio.currentTime);
         }
+
     });
 
-    // Restore previous music state on every page
+    // Restore previous music state
     const savedState = localStorage.getItem(STORAGE_KEY);
 
     if (savedState === "on") {
