@@ -1,115 +1,115 @@
-document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function () {
 
-    const musicButton = document.getElementById("musicToggle");
+        const musicButton = document.getElementById("musicToggle");
 
-    if (!musicButton) return;
+        if (!musicButton) return;
 
-    const musicIcon = musicButton.querySelector(".music-icon");
-    const musicLabel = musicButton.querySelector(".music-label");
+        const musicIcon = musicButton.querySelector(".music-icon");
+        const musicLabel = musicButton.querySelector(".music-label");
 
-    const STORAGE_KEY = "studioMusicState";
-    const TIME_KEY = "studioMusicTime";
+        const STORAGE_KEY = "studioMusicState";
+        const TIME_KEY = "studioMusicTime";
 
-    const audio = new Audio("/assets/music/studio-instrumental.mp3");
+        const audio = new Audio("/assets/music/studio instrumental.mpeg");
 
-    audio.loop = true;
-    audio.volume = 0.20;
-    audio.preload = "auto";
+        audio.loop = true;
+        audio.volume = 0.20;
+        audio.preload = "auto";
 
-    let isPlaying = false;
+        let isPlaying = false;
 
-    function updateButton(playing) {
-        isPlaying = playing;
+        function updateButton(playing) {
+            isPlaying = playing;
 
-        musicButton.classList.toggle("is-playing", playing);
-        musicButton.setAttribute("aria-pressed", String(playing));
+            musicButton.classList.toggle("is-playing", playing);
+            musicButton.setAttribute("aria-pressed", String(playing));
 
-        musicButton.setAttribute(
-            "aria-label",
-            playing ? "Pause background music" : "Play background music"
-        );
+            musicButton.setAttribute(
+                "aria-label",
+                playing ? "Pause background music" : "Play background music"
+            );
 
-        if (musicLabel) {
-            musicLabel.textContent = playing ? "Music On" : "Music Off";
-        }
-
-        if (musicIcon) {
-            musicIcon.textContent = "♫";
-        }
-    }
-
-    async function playMusic() {
-        try {
-
-            const savedTime = Number(localStorage.getItem(TIME_KEY)) || 0;
-
-            if (savedTime > 0 && Number.isFinite(savedTime)) {
-
-                if (audio.readyState < 1) {
-                    await new Promise((resolve, reject) => {
-
-                        audio.addEventListener("loadedmetadata", resolve, { once: true });
-                        audio.addEventListener("error", reject, { once: true });
-
-                        audio.load();
-                    });
-                }
-
-                if (Number.isFinite(audio.duration) && audio.duration > 0) {
-                    audio.currentTime = savedTime % audio.duration;
-                }
+            if (musicLabel) {
+                musicLabel.textContent = playing ? "Music On" : "Music Off";
             }
 
-            await audio.play();
+            if (musicIcon) {
+                musicIcon.textContent = "♫";
+            }
+        }
 
-            localStorage.setItem(STORAGE_KEY, "on");
+        async function playMusic() {
+            try {
 
-            updateButton(true);
+                const savedTime = Number(localStorage.getItem(TIME_KEY)) || 0;
 
-        } catch (error) {
+                if (savedTime > 0 && Number.isFinite(savedTime)) {
+
+                    if (audio.readyState < 1) {
+                        await new Promise((resolve, reject) => {
+
+                            audio.addEventListener("loadedmetadata", resolve, { once: true });
+                            audio.addEventListener("error", reject, { once: true });
+
+                            audio.load();
+                        });
+                    }
+
+                    if (Number.isFinite(audio.duration) && audio.duration > 0) {
+                        audio.currentTime = savedTime % audio.duration;
+                    }
+                }
+
+                await audio.play();
+
+                localStorage.setItem(STORAGE_KEY, "on");
+
+                updateButton(true);
+
+            } catch (error) {
+
+                updateButton(false);
+
+                console.error("Music playback error:", error);
+            }
+        }
+
+        function stopMusic() {
+
+            audio.pause();
+
+            localStorage.setItem(STORAGE_KEY, "off");
+            localStorage.removeItem(TIME_KEY);
 
             updateButton(false);
-
-            console.error("Music playback error:", error);
         }
-    }
 
-    function stopMusic() {
+        musicButton.addEventListener("click", function () {
 
-        audio.pause();
+            if (isPlaying) {
+                stopMusic();
+            } else {
+                playMusic();
+            }
 
-        localStorage.setItem(STORAGE_KEY, "off");
-        localStorage.removeItem(TIME_KEY);
+        });
 
-        updateButton(false);
-    }
+        // Save music position periodically
+        audio.addEventListener("timeupdate", function () {
 
-    musicButton.addEventListener("click", function () {
+            if (!audio.paused) {
+                localStorage.setItem(TIME_KEY, audio.currentTime);
+            }
 
-        if (isPlaying) {
-            stopMusic();
-        } else {
+        });
+
+        // Restore previous music state
+        const savedState = localStorage.getItem(STORAGE_KEY);
+
+        if (savedState === "on") {
             playMusic();
+        } else {
+            updateButton(false);
         }
 
     });
-
-    // Save music position periodically
-    audio.addEventListener("timeupdate", function () {
-
-        if (!audio.paused) {
-            localStorage.setItem(TIME_KEY, audio.currentTime);
-        }
-
-    });
-
-    // Restore previous music state
-    const savedState = localStorage.getItem(STORAGE_KEY);
-
-    if (savedState === "on") {
-        playMusic();
-    } else {
-        updateButton(false);
-    }
-
-});
