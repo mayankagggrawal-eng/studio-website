@@ -12,7 +12,7 @@
     if (!window.studioAudio) {
 
         window.studioAudio = new Audio(
-            "/assets/music/studio instrumental.mpeg"
+            "/assets/music/studio%20instrumental.mpeg"
         );
 
         window.studioAudio.loop = true;
