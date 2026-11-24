@@ -71,10 +71,7 @@ window.galleryData = [
   category: "Maternity Shoot",
   image: "../../assets/services/events/meternity/01 (16).webp"
 },
-{
-  category: "Maternity Shoot",
-  image: "../../assets/services/events/meternity/01 (16).webp"
-},
+
 {
   category: "Maternity Shoot",
   image: "../../assets/services/events/meternity/01 (17).webp"

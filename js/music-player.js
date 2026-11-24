@@ -1,4 +1,29 @@
-    document.addEventListener("DOMContentLoaded", function () {
+/* ==========================================
+   NEW PRATIBHA DIGITAL STUDIO
+   PERSISTENT BACKGROUND MUSIC PLAYER
+========================================== */
+
+(function () {
+
+    const STORAGE_KEY = "studioMusicState";
+    const TIME_KEY = "studioMusicTime";
+
+    // Create only one audio instance for the entire website session.
+    if (!window.studioAudio) {
+
+        window.studioAudio = new Audio(
+            "/assets/music/studio instrumental.mpeg"
+        );
+
+        window.studioAudio.loop = true;
+        window.studioAudio.volume = 0.50;
+        window.studioAudio.preload = "auto";
+
+    }
+
+    const audio = window.studioAudio;
+
+    function updateMusicButton() {
 
         const musicButton = document.getElementById("musicToggle");
 
@@ -7,94 +32,82 @@
         const musicIcon = musicButton.querySelector(".music-icon");
         const musicLabel = musicButton.querySelector(".music-label");
 
-        const STORAGE_KEY = "studioMusicState";
-        const TIME_KEY = "studioMusicTime";
+        const playing = !audio.paused;
 
-        const audio = new Audio("/assets/music/studio instrumental.mpeg");
+        musicButton.classList.toggle("is-playing", playing);
 
-        audio.loop = true;
-        audio.volume = 0.50;
-        audio.preload = "auto";
+        musicButton.setAttribute("aria-pressed", String(playing));
 
-        let isPlaying = false;
+        musicButton.setAttribute(
+            "aria-label",
+            playing ? "Pause background music" : "Play background music"
+        );
 
-        function updateButton(playing) {
-            isPlaying = playing;
-
-            musicButton.classList.toggle("is-playing", playing);
-            musicButton.setAttribute("aria-pressed", String(playing));
-
-            musicButton.setAttribute(
-                "aria-label",
-                playing ? "Pause background music" : "Play background music"
-            );
-
-            if (musicLabel) {
-                musicLabel.textContent = playing ? "Music On" : "Music Off";
-            }
-
-            if (musicIcon) {
-                musicIcon.textContent = "♫";
-            }
+        if (musicLabel) {
+            musicLabel.textContent = playing ? "Music On" : "Music Off";
         }
 
-        async function playMusic() {
-            try {
-
-                const savedTime = Number(localStorage.getItem(TIME_KEY)) || 0;
-
-                if (savedTime > 0 && Number.isFinite(savedTime)) {
-
-                    if (audio.readyState < 1) {
-                        await new Promise((resolve, reject) => {
-
-                            audio.addEventListener("loadedmetadata", resolve, { once: true });
-                            audio.addEventListener("error", reject, { once: true });
-
-                            audio.load();
-                        });
-                    }
-
-                    if (Number.isFinite(audio.duration) && audio.duration > 0) {
-                        audio.currentTime = savedTime % audio.duration;
-                    }
-                }
-
-                await audio.play();
-
-                localStorage.setItem(STORAGE_KEY, "on");
-
-                updateButton(true);
-
-            } catch (error) {
-
-                updateButton(false);
-
-                console.error("Music playback error:", error);
-            }
+        if (musicIcon) {
+            musicIcon.textContent = "♫";
         }
 
-        function stopMusic() {
+    }
 
-            audio.pause();
+    async function playMusic() {
 
-            localStorage.setItem(STORAGE_KEY, "off");
-            localStorage.removeItem(TIME_KEY);
+        try {
 
-            updateButton(false);
+            await audio.play();
+
+            localStorage.setItem(STORAGE_KEY, "on");
+
+            updateMusicButton();
+
+        } catch (error) {
+
+            console.error("Music playback error:", error);
+
+            updateMusicButton();
+
         }
 
-        musicButton.addEventListener("click", function () {
+    }
 
-            if (isPlaying) {
-                stopMusic();
-            } else {
+    function stopMusic() {
+
+        audio.pause();
+
+        localStorage.setItem(STORAGE_KEY, "off");
+        localStorage.removeItem(TIME_KEY);
+
+        updateMusicButton();
+
+    }
+
+    // One delegated click listener for the entire website.
+    if (!window.studioMusicClickBound) {
+
+        document.addEventListener("click", function (event) {
+
+            const musicButton = event.target.closest("#musicToggle");
+
+            if (!musicButton) return;
+
+            if (audio.paused) {
                 playMusic();
+            } else {
+                stopMusic();
             }
 
         });
 
-        // Save music position periodically
+        window.studioMusicClickBound = true;
+
+    }
+
+    // Save playback position.
+    if (!window.studioMusicTimeBound) {
+
         audio.addEventListener("timeupdate", function () {
 
             if (!audio.paused) {
@@ -103,13 +116,44 @@
 
         });
 
-        // Restore previous music state
-        const savedState = localStorage.getItem(STORAGE_KEY);
+        window.studioMusicTimeBound = true;
 
-        if (savedState === "on") {
-            playMusic();
-        } else {
-            updateButton(false);
+    }
+
+    // Update button whenever audio state changes.
+    audio.addEventListener("play", updateMusicButton);
+    audio.addEventListener("pause", updateMusicButton);
+
+    // Restore previous music state on a fresh page load.
+    if (!window.studioMusicRestoreStarted) {
+
+        window.studioMusicRestoreStarted = true;
+
+        if (localStorage.getItem(STORAGE_KEY) === "on") {
+
+            const savedTime = Number(localStorage.getItem(TIME_KEY)) || 0;
+
+            audio.addEventListener("loadedmetadata", async function () {
+
+                if (
+                    savedTime > 0 &&
+                    Number.isFinite(savedTime) &&
+                    audio.duration > 0
+                ) {
+                    audio.currentTime = savedTime % audio.duration;
+                }
+
+                await playMusic();
+
+            }, { once: true });
+
+            audio.load();
+
         }
 
-    });
+    }
+
+    updateMusicButton();
+
+})();
+    

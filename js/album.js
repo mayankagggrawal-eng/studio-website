@@ -1,4 +1,4 @@
-const galleryData = [
+window.galleryData = [
 
     {
         image: "../../assets/album/01.webp",

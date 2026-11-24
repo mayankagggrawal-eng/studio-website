@@ -1,44 +1,48 @@
 /* ===========================================================
    NEW PRATIBHA DIGITAL STUDIO
    MAIN SCRIPT
-   PART 1
+   PJAX COMPATIBLE VERSION
 =========================================================== */
+
 
 /* ===============================
    GALLERY DATA
 ================================ */
 
 const galleries = {
-  wedding: {
-    title: "Wedding Photography",
-    images: [
-      "../../assets/services/wedding/hero.jpg",
-      "../../assets/services/wedding/1.jpg",
-      "../../assets/services/wedding/2.jpg",
-      "../../assets/services/wedding/3.jpg",
-    ],
-  },
 
-  prewedding: {
-    title: "Pre-Wedding Shoot",
-    images: [
-      "../../assets/services/Pre-Wedding/hero.jpg",
-      "../../assets/services/Pre-Wedding/1.jpg",
-      "../../assets/services/Pre-Wedding/2.jpg",
-      "../../assets/services/Pre-Wedding/3.jpg",
-    ],
-  },
+    wedding: {
+        title: "Wedding Photography",
+        images: [
+            "../../assets/services/wedding/hero.jpg",
+            "../../assets/services/wedding/1.jpg",
+            "../../assets/services/wedding/2.jpg",
+            "../../assets/services/wedding/3.jpg"
+        ]
+    },
 
-  events: {
-    title: "Event Coverage",
-    images: [
-      "../../assets/services/Event/hero.jpg",
-      "../../assets/services/Event/1.jpg",
-      "../../assets/services/Event/2.jpg",
-      "../../assets/services/Event/3.jpg",
-    ],
-  },
+    prewedding: {
+        title: "Pre-Wedding Shoot",
+        images: [
+            "../../assets/services/Pre-Wedding/hero.jpg",
+            "../../assets/services/Pre-Wedding/1.jpg",
+            "../../assets/services/Pre-Wedding/2.jpg",
+            "../../assets/services/Pre-Wedding/3.jpg"
+        ]
+    },
+
+    events: {
+        title: "Event Coverage",
+        images: [
+            "../../assets/services/Event/hero.jpg",
+            "../../assets/services/Event/1.jpg",
+            "../../assets/services/Event/2.jpg",
+            "../../assets/services/Event/3.jpg"
+        ]
+    }
+
 };
+
 
 /* ===============================
    WHATSAPP BOOKING
@@ -46,19 +50,19 @@ const galleries = {
 
 function sendWhatsApp() {
 
-  const name = document.getElementById("name").value.trim();
-  const phone = document.getElementById("phone").value.trim();
-  const eventType = document.getElementById("event").value;
-  const date = document.getElementById("date").value;
-  const location = document.getElementById("location").value.trim();
-  const message = document.getElementById("message").value.trim();
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const eventType = document.getElementById("event").value;
+    const date = document.getElementById("date").value;
+    const location = document.getElementById("location").value.trim();
+    const message = document.getElementById("message").value.trim();
 
-  if (!name || !phone || !eventType || !date || !location) {
-    alert("Please fill all required fields.");
-    return;
-  }
+    if (!name || !phone || !eventType || !date || !location) {
+        alert("Please fill all required fields.");
+        return;
+    }
 
-  const text = encodeURIComponent(
+    const text = encodeURIComponent(
 `📸 NEW SHOOT BOOKING
 
 👤 Name: ${name}
@@ -67,15 +71,16 @@ function sendWhatsApp() {
 📅 Date: ${date}
 📍 Location: ${location}
 📝 Details: ${message || "N/A"}`
-  );
+    );
 
-  window.open(
-    `https://wa.me/919834532026?text=${text}`,
-    "_blank",
-    "noopener,noreferrer"
-  );
+    window.open(
+        `https://wa.me/919834532026?text=${text}`,
+        "_blank",
+        "noopener,noreferrer"
+    );
 
 }
+
 
 /* ===============================
    MOBILE MENU
@@ -83,19 +88,20 @@ function sendWhatsApp() {
 
 function toggleMenu() {
 
-  const navbar = document.querySelector(".navbar");
-  const menu = document.querySelector(".menu-toggle");
+    const navbar = document.querySelector(".navbar");
+    const menu = document.querySelector(".menu-toggle");
 
-  if (!navbar || !menu) return;
+    if (!navbar || !menu) return;
 
-  const isOpen = navbar.classList.toggle("active");
+    const isOpen = navbar.classList.toggle("active");
 
-  menu.setAttribute(
-    "aria-expanded",
-    isOpen ? "true" : "false"
-  );
+    menu.setAttribute(
+        "aria-expanded",
+        isOpen ? "true" : "false"
+    );
 
 }
+
 
 /* ===============================
    GALLERY LIGHTBOX
@@ -103,300 +109,357 @@ function toggleMenu() {
 
 function openGallery(key) {
 
-  const gallery = galleries[key];
-  const lightbox = document.getElementById("gallery-lightbox");
+    const gallery = galleries[key];
+    const lightbox = document.getElementById("gallery-lightbox");
 
-  if (!gallery || !lightbox) return;
+    if (!gallery || !lightbox) return;
 
-  lightbox.innerHTML = `
-      <div class="lightbox-content">
+    lightbox.innerHTML = `
+        <div class="lightbox-content">
 
-          <button
-            class="lightbox-close"
-            aria-label="Close Gallery">
-            &times;
-          </button>
+            <button
+                class="lightbox-close"
+                aria-label="Close Gallery">
+                &times;
+            </button>
 
-          <h3>${gallery.title}</h3>
+            <h3>${gallery.title}</h3>
 
-          <div class="gallery-grid">
+            <div class="gallery-grid">
 
-            ${gallery.images.map(image => `
-<img
-  src="${image}"
-  alt="${gallery.title}"
-  loading="lazy"
-  draggable="false"
-  ondragstart="return false"
-  oncontextmenu="return false">            `).join("")}
+                ${gallery.images.map(image => `
+                    <img
+                        src="${image}"
+                        alt="${gallery.title}"
+                        loading="lazy"
+                        draggable="false"
+                        ondragstart="return false"
+                        oncontextmenu="return false">
+                `).join("")}
 
-          </div>
+            </div>
 
-      </div>
-  `;
+        </div>
+    `;
 
-  lightbox.style.display = "flex";
+    lightbox.style.display = "flex";
 
-  const closeBtn = lightbox.querySelector(".lightbox-close");
+    const closeBtn = lightbox.querySelector(".lightbox-close");
 
-  closeBtn.addEventListener("click", () => {
-    lightbox.style.display = "none";
-  });
+    closeBtn.addEventListener("click", () => {
+        lightbox.style.display = "none";
+    });
 
-  lightbox.addEventListener("click", (e) => {
+    lightbox.addEventListener("click", (event) => {
 
-    if (e.target === lightbox) {
-      lightbox.style.display = "none";
-    }
+        if (event.target === lightbox) {
+            lightbox.style.display = "none";
+        }
 
-  });
+    });
 
 }
+
+
 /* ===========================================================
-   MAIN SCRIPT
-   PART 2
+   PJAX PAGE REINITIALIZATION
 =========================================================== */
 
+(function () {
+
+    let revealObserver = null;
+
+
+    /* ===============================
+       INITIALIZE PAGE FEATURES
+    ================================ */
+
+    window.initMainPageFeatures = function () {
+
+
+        /* ===============================
+           IMAGE DRAG PROTECTION
+        ================================ */
+
+        document.querySelectorAll("img").forEach(img => {
+
+            img.draggable = false;
+            img.setAttribute("draggable", "false");
+
+        });
+
+
+        /* ===============================
+           SCROLL REVEAL
+        ================================ */
+
+        if (!revealObserver) {
+
+            revealObserver = new IntersectionObserver(
+                function (entries) {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("active");
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.15
+                }
+            );
+
+        }
+
+        const revealElements = document.querySelectorAll(
+            ".about, .owner, .services, .why-us, .portfolio, .testimonials, .faq, .booking, .contact, .location-section, .footer"
+        );
+
+        revealElements.forEach(section => {
+
+            section.classList.add("reveal");
+
+            if (!section.dataset.pjaxRevealBound) {
+
+                revealObserver.observe(section);
+
+                section.dataset.pjaxRevealBound = "true";
+
+            }
+
+        });
+
+
+        /* ===============================
+           PORTFOLIO IMAGE LOAD EFFECT
+        ================================ */
+
+        document.querySelectorAll(".portfolio-item img").forEach(img => {
+
+            if (img.dataset.pjaxImageBound) return;
+
+            if (img.complete) {
+
+                img.parentElement.classList.add("loaded");
+
+            } else {
+
+                img.addEventListener("load", function () {
+
+                    img.parentElement.classList.add("loaded");
+
+                });
+
+            }
+
+            img.dataset.pjaxImageBound = "true";
+
+        });
+
+
+        /* ===============================
+           PREMIUM PORTFOLIO SLIDER
+        ================================ */
+
+        const track = document.querySelector(".portfolio-track");
+
+        if (track && !track.dataset.pjaxSliderBound) {
+
+            let position = 0;
+            const speed = 1;
+            let paused = false;
+            let animationFrame;
+
+            track.addEventListener("mouseenter", function () {
+                paused = true;
+            });
+
+            track.addEventListener("mouseleave", function () {
+                paused = false;
+            });
+
+            function animateSlider() {
+
+                if (!document.body.contains(track)) {
+
+                    cancelAnimationFrame(animationFrame);
+                    return;
+
+                }
+
+                if (!paused) {
+
+                    position += speed;
+
+                    if (position >= track.scrollWidth / 2) {
+                        position = 0;
+                    }
+
+                    track.style.transform = `translateX(-${position}px)`;
+
+                }
+
+                animationFrame = requestAnimationFrame(animateSlider);
+
+            }
+
+            animationFrame = requestAnimationFrame(animateSlider);
+
+            track.dataset.pjaxSliderBound = "true";
+
+        }
+
+    };
+
+
+})();
+
+
+/* ===========================================================
+   GLOBAL EVENT HANDLERS
+=========================================================== */
+
+
 /* ===============================
-   PREMIUM LOADER
-================================ */
-window.addEventListener("load", () => {
-
-    setTimeout(() => {
-        document.getElementById("loader").classList.add("hide");
-    }, 3000);
-
-});
-
-/* ===============================
-   DOM READY
+   MOBILE MENU CLOSE
 ================================ */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("click", function (event) {
 
     const navbar = document.querySelector(".navbar");
     const menu = document.querySelector(".menu-toggle");
+
+    if (
+        navbar &&
+        menu &&
+        navbar.classList.contains("active") &&
+        !navbar.contains(event.target) &&
+        !menu.contains(event.target)
+    ) {
+
+        navbar.classList.remove("active");
+
+        menu.setAttribute("aria-expanded", "false");
+
+    }
+
+});
+
+
+/* ===============================
+   MOBILE MENU KEYBOARD SUPPORT
+================================ */
+
+document.addEventListener("keydown", function (event) {
+
+    const menu = event.target.closest(".menu-toggle");
+
+    if (!menu) return;
+
+    if (event.key === "Enter" || event.key === " ") {
+
+        event.preventDefault();
+
+        toggleMenu();
+
+    }
+
+});
+
+
+/* ===============================
+   STICKY HEADER
+================================ */
+
+window.addEventListener("scroll", function () {
+
     const header = document.querySelector(".header");
 
-    /* Mobile Menu Close */
+    if (!header) return;
 
-    document.addEventListener("click", (event) => {
+    if (window.scrollY > 50) {
 
-        if (
-            navbar &&
-            menu &&
-            navbar.classList.contains("active") &&
-            !navbar.contains(event.target) &&
-            !menu.contains(event.target)
-        ) {
-
-            navbar.classList.remove("active");
-            menu.setAttribute("aria-expanded", "false");
-
-        }
-
-    });
-
-    /* Keyboard Support */
-
-    if (menu) {
-
-        menu.addEventListener("keydown", (event) => {
-
-            if (event.key === "Enter" || event.key === " ") {
-
-                event.preventDefault();
-                toggleMenu();
-
-            }
-
-        });
-
-    }
-
-    /* Sticky Header */
-
-    if (header) {
-
-        window.addEventListener("scroll", () => {
-
-            if (window.scrollY > 50) {
-                header.classList.add("sticky");
-            } else {
-                header.classList.remove("sticky");
-            }
-
-        });
-
-    }
-
-    /* Disable Image Drag */
-
-    document.querySelectorAll("img").forEach(img => {
-        img.setAttribute("draggable", "false");
-    });
-
-});
-
-
-/* ===============================
-   SCROLL REVEAL
-================================ */
-
-const revealElements = document.querySelectorAll(
-
-".about, .owner, .services, .why-us, .portfolio, .testimonials, .faq, .booking, .contact, .location-section, .footer"
-
-);
-
-revealElements.forEach(section => {
-
-    section.classList.add("reveal");
-
-});
-
-const revealObserver = new IntersectionObserver((entries) => {
-
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-            entry.target.classList.add("active");
-
-        }
-
-    });
-
-}, {
-
-    threshold: 0.15
-
-});
-
-revealElements.forEach(section => {
-
-    revealObserver.observe(section);
-
-});
-
-
-/* ===============================
-   PORTFOLIO IMAGE LOAD EFFECT
-================================ */
-
-document.querySelectorAll(".portfolio-item img").forEach(img => {
-
-    if (img.complete) {
-
-        img.parentElement.classList.add("loaded");
+        header.classList.add("sticky");
 
     } else {
 
-        img.addEventListener("load", () => {
-
-            img.parentElement.classList.add("loaded");
-
-        });
+        header.classList.remove("sticky");
 
     }
-
-});
-/* ===========================================================
-   MAIN SCRIPT
-   PART 3
-=========================================================== */
-
-
-/* ===============================
-   PREMIUM PORTFOLIO SLIDER
-================================ */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    const track = document.querySelector(".portfolio-track");
-
-    if (!track) return;
-
-    let position = 0;
-    const speed = 1;
-    let paused = false;
-
-    track.addEventListener("mouseenter", () => {
-        paused = true;
-    });
-
-    track.addEventListener("mouseleave", () => {
-        paused = false;
-    });
-
-    function animateSlider() {
-
-        if (!paused) {
-
-            position += speed;
-
-            if (position >= track.scrollWidth / 2) {
-                position = 0;
-            }
-
-            track.style.transform = `translateX(-${position}px)`;
-        }
-
-        requestAnimationFrame(animateSlider);
-
-    }
-
-    requestAnimationFrame(animateSlider);
 
 });
 
 
 /* ===============================
    GALLERY CARD NAVIGATION
+   SINGLE GLOBAL HANDLER
 ================================ */
-document.addEventListener("DOMContentLoaded", () => {
 
-    const cards = document.querySelectorAll(".gallery-card");
+document.addEventListener("click", function (event) {
 
-    cards.forEach(card => {
+    const card = event.target.closest(".gallery-card");
 
-        card.addEventListener("click", () => {
+    if (!card) return;
 
-            const target = card.dataset.category;
+    const target = card.dataset.category;
 
-            switch (target) {
+    let page = "";
 
-                case "wedding":
-                    window.location.href = "wedding.html";
-                    break;
+    switch (target) {
 
-                case "prewedding":
-                    window.location.href = "prewedding.html";
-                    break;
+        case "wedding":
+            page = "wedding.html";
+            break;
 
-                case "events":
-                    window.location.href = "events.html";
-                    break;
+        case "prewedding":
+            page = "prewedding.html";
+            break;
 
-                case "album":
-    console.log("Album clicked");
-    console.log(window.location.href);
-    window.location.href = "./album.html";
-    break;
+        case "events":
+            page = "events.html";
+            break;
 
-            }
+        case "album":
+            page = "album.html";
+            break;
 
-        });
+    }
 
-    });
+    if (!page) return;
+
+    if (typeof window.navigateToPage === "function") {
+
+        window.navigateToPage(page);
+
+    } else {
+
+        window.location.href = page;
+
+    }
 
 });
 
 
 /* ===============================
-   END OF FILE
+   PREMIUM LOADER
 ================================ */
 
+window.addEventListener("load", function () {
+
+    setTimeout(function () {
+
+        const loader = document.getElementById("loader");
+
+        if (loader) {
+            loader.classList.add("hide");
+        }
+
+    }, 3000);
+
+});
 
 
 /* ===============================
@@ -405,69 +468,95 @@ document.addEventListener("DOMContentLoaded", () => {
 
 (function () {
 
+
     // Disable Right Click
-    document.addEventListener("contextmenu", function (e) {
-        e.preventDefault();
+
+    document.addEventListener("contextmenu", function (event) {
+        event.preventDefault();
     });
+
 
     // Disable Drag
-    document.addEventListener("dragstart", function (e) {
-        e.preventDefault();
+
+    document.addEventListener("dragstart", function (event) {
+        event.preventDefault();
     });
+
 
     // Disable Drop
-    document.addEventListener("drop", function (e) {
-        e.preventDefault();
+
+    document.addEventListener("drop", function (event) {
+        event.preventDefault();
     });
+
 
     // Disable Copy
-    document.addEventListener("copy", function (e) {
-        e.preventDefault();
+
+    document.addEventListener("copy", function (event) {
+        event.preventDefault();
     });
+
 
     // Disable Cut
-    document.addEventListener("cut", function (e) {
-        e.preventDefault();
+
+    document.addEventListener("cut", function (event) {
+        event.preventDefault();
     });
+
 
     // Disable Selection
-    document.addEventListener("selectstart", function (e) {
-        e.preventDefault();
+
+    document.addEventListener("selectstart", function (event) {
+        event.preventDefault();
     });
 
-    // Disable Image Drag
-    document.querySelectorAll("img").forEach(function (img) {
-
-        img.draggable = false;
-
-        img.setAttribute("draggable", "false");
-
-        img.ondragstart = function () {
-            return false;
-        };
-
-        img.oncontextmenu = function () {
-            return false;
-        };
-
-    });
 
     // Disable Keyboard Shortcuts
-    document.addEventListener("keydown", function (e) {
 
-        const key = e.key.toLowerCase();
+    document.addEventListener("keydown", function (event) {
+
+        const key = event.key.toLowerCase();
 
         if (
-            e.ctrlKey &&
+            event.ctrlKey &&
             ["a", "c", "x", "s", "u", "p"].includes(key)
         ) {
-            e.preventDefault();
+            event.preventDefault();
         }
 
         if (key === "f12") {
-            e.preventDefault();
+            event.preventDefault();
         }
 
     });
 
+
 })();
+
+
+/* ===============================
+   INITIAL PAGE SETUP
+================================ */
+
+if (document.readyState === "loading") {
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        function () {
+
+            window.initMainPageFeatures();
+
+        },
+        { once: true }
+    );
+
+} else {
+
+    window.initMainPageFeatures();
+
+}
+
+
+/* ===========================================================
+   END OF MAIN SCRIPT
+=========================================================== */

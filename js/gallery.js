@@ -1,133 +1,276 @@
-if (!window.galleryData) {
-  console.error("galleryData missing");
-}
-console.log("galleryData loaded:", galleryData);
-const galleryGrid = document.querySelector(".gallery-grid");
-const filterButtons = document.querySelectorAll(".category-btn");
-const lightbox = document.getElementById("gallery-lightbox");
+/* ==========================================
+   NEW PRATIBHA DIGITAL STUDIO
+   UNIVERSAL GALLERY SYSTEM
+   PJAX COMPATIBLE
+========================================== */
 
-let currentImages = [];
-let currentIndex = 0;
+(function () {
 
-// =====================
-// RENDER GALLERY
-// =====================
-function renderGallery(filter = "all") {
+    let currentImages = [];
+    let currentIndex = 0;
 
-  galleryGrid.innerHTML = "";
+    let galleryInitialized = false;
 
-  const safeFilter = filter || "all";
 
-  const filtered = window.galleryData.filter(item =>
-    safeFilter === "all" || item.category === safeFilter
-  );
+    /* ======================================
+       RENDER GALLERY
+    ====================================== */
 
-  currentImages = [];
+    function renderGallery(filter = "all") {
 
-  filtered.forEach((item, index) => {
+        const galleryGrid = document.querySelector(".gallery-grid");
 
-    currentImages.push(item.image);
+        if (!galleryGrid || !Array.isArray(window.galleryData)) {
+            console.warn("Gallery grid or gallery data missing.");
+            return;
+        }
 
-    const div = document.createElement("div");
-    div.className = "gallery-item";
-    div.dataset.index = index;
+        galleryGrid.innerHTML = "";
 
-    const img = document.createElement("img");
+        const safeFilter = filter || "all";
 
-    img.src = item.image;
-    img.alt = item.category;
+        const filtered = window.galleryData.filter(item =>
+            safeFilter === "all" || item.category === safeFilter
+        );
 
-    img.loading = "lazy";
-    img.decoding = "async";
-    img.draggable = false;
-    img.setAttribute("fetchpriority", "low");
+        currentImages = [];
 
-    img.onerror = function () {
-      this.src = "../../assets/no-image.jpg";
-    };
+        filtered.forEach((item, index) => {
 
-    div.appendChild(img);
-    galleryGrid.appendChild(div);
-  });
-}
-// =====================
-// CLICK IMAGE OPEN
-// =====================
-galleryGrid.addEventListener("click", (e) => {
-  const item = e.target.closest(".gallery-item");
-  if (!item) return;
+            currentImages.push(item.image);
 
-  const index = Number(item.dataset.index);
-  if (Number.isNaN(index)) return;
+            const div = document.createElement("div");
+            div.className = "gallery-item";
+            div.dataset.index = index;
 
-  currentIndex = index;
-  openLightbox();
-});
+            const img = document.createElement("img");
 
-// =====================
-// LIGHTBOX OPEN
-// =====================
-function openLightbox() {
-  if (!currentImages.length) return;
+            img.src = item.image;
+            img.alt = item.category || "Studio Gallery";
 
-  lightbox.classList.add("active");
+            img.loading = "lazy";
+            img.decoding = "async";
+            img.draggable = false;
 
-  lightbox.innerHTML = `
-    <span class="close-btn">&times;</span>
-    <span class="prev-btn">&#10094;</span>
-    <img
-      src="${currentImages[currentIndex]}"
-      alt=""
-      loading="eager"
-      decoding="async"
-      draggable="false">
-    <span class="next-btn">&#10095;</span>
-  `;
+            img.setAttribute("fetchpriority", "low");
 
-  lightbox.querySelector(".close-btn").onclick = closeLightbox;
-  lightbox.querySelector(".prev-btn").onclick = prevImage;
-  lightbox.querySelector(".next-btn").onclick = nextImage;
-}
+            img.onerror = function () {
+                this.src = "../../assets/no-image.jpg";
+            };
 
-// =====================
-// LIGHTBOX CONTROLS
-// =====================
-function closeLightbox() {
-  lightbox.classList.remove("active");
-}
+            div.appendChild(img);
+            galleryGrid.appendChild(div);
 
-function nextImage() {
-  currentIndex = (currentIndex + 1) % currentImages.length;
-  updateLightbox();
-}
+        });
 
-function prevImage() {
-  currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
-  updateLightbox();
-}
+    }
 
-function updateLightbox() {
-  const image = lightbox.querySelector("img");
-  image.style.opacity = "0";
 
-  setTimeout(() => {
-    image.src = currentImages[currentIndex];
-    image.onload = () => {
-      image.style.opacity = "1";
-    };
-  }, 120);
-}
+    /* ======================================
+       LIGHTBOX OPEN
+    ====================================== */
 
-// =====================
-// FILTER BUTTONS
-// =====================
-filterButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    filterButtons.forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-    renderGallery(btn.dataset.filter);
-  });
-});
+    function openLightbox() {
 
-// INIT
-renderGallery("all");
+        const lightbox = document.getElementById("gallery-lightbox");
+
+        if (!lightbox || !currentImages.length) return;
+
+        lightbox.classList.add("active");
+
+        lightbox.innerHTML = `
+            <span class="close-btn">&times;</span>
+
+            <span class="prev-btn">&#10094;</span>
+
+            <img
+                src="${currentImages[currentIndex]}"
+                alt=""
+                loading="eager"
+                decoding="async"
+                draggable="false">
+
+            <span class="next-btn">&#10095;</span>
+        `;
+
+        lightbox.querySelector(".close-btn").onclick = closeLightbox;
+        lightbox.querySelector(".prev-btn").onclick = prevImage;
+        lightbox.querySelector(".next-btn").onclick = nextImage;
+
+    }
+
+
+    /* ======================================
+       LIGHTBOX CLOSE
+    ====================================== */
+
+    function closeLightbox() {
+
+        const lightbox = document.getElementById("gallery-lightbox");
+
+        if (!lightbox) return;
+
+        lightbox.classList.remove("active");
+
+    }
+
+
+    /* ======================================
+       NEXT IMAGE
+    ====================================== */
+
+    function nextImage() {
+
+        if (!currentImages.length) return;
+
+        currentIndex = (currentIndex + 1) % currentImages.length;
+
+        updateLightbox();
+
+    }
+
+
+    /* ======================================
+       PREVIOUS IMAGE
+    ====================================== */
+
+    function prevImage() {
+
+        if (!currentImages.length) return;
+
+        currentIndex =
+            (currentIndex - 1 + currentImages.length) % currentImages.length;
+
+        updateLightbox();
+
+    }
+
+
+    /* ======================================
+       UPDATE LIGHTBOX IMAGE
+    ====================================== */
+
+    function updateLightbox() {
+
+        const lightbox = document.getElementById("gallery-lightbox");
+
+        if (!lightbox) return;
+
+        const image = lightbox.querySelector("img");
+
+        if (!image) return;
+
+        image.style.opacity = "0";
+
+        setTimeout(() => {
+
+            image.src = currentImages[currentIndex];
+
+            image.onload = function () {
+                image.style.opacity = "1";
+            };
+
+        }, 120);
+
+    }
+
+
+    /* ======================================
+       INITIALIZE GALLERY
+    ====================================== */
+
+    function initServiceGallery() {
+
+        const galleryGrid = document.querySelector(".gallery-grid");
+
+        if (!galleryGrid) return;
+
+        if (!Array.isArray(window.galleryData)) {
+            console.warn("Gallery data not available.");
+            return;
+        }
+
+        currentImages = [];
+        currentIndex = 0;
+
+        renderGallery("all");
+
+    }
+
+
+    /* ======================================
+       GLOBAL CLICK HANDLER
+       Attached ONLY ONCE
+    ====================================== */
+
+    if (!galleryInitialized) {
+
+        document.addEventListener("click", function (e) {
+
+            /* Gallery Image Click */
+
+            const item = e.target.closest(".gallery-item");
+
+            if (item) {
+
+                const index = Number(item.dataset.index);
+
+                if (Number.isNaN(index)) return;
+
+                currentIndex = index;
+
+                openLightbox();
+
+                return;
+
+            }
+
+
+            /* Category Filter Click */
+
+            const button = e.target.closest(".category-btn");
+
+            if (button) {
+
+                const buttons = document.querySelectorAll(".category-btn");
+
+                buttons.forEach(btn => {
+                    btn.classList.remove("active");
+                });
+
+                button.classList.add("active");
+
+                renderGallery(button.dataset.filter || "all");
+
+            }
+
+        });
+
+        galleryInitialized = true;
+
+    }
+
+
+    /* ======================================
+       PUBLIC INITIALIZATION FUNCTION
+    ====================================== */
+
+    window.initServiceGallery = initServiceGallery;
+
+
+    /* ======================================
+       INITIAL PAGE LOAD
+    ====================================== */
+
+    if (document.readyState === "loading") {
+
+        document.addEventListener("DOMContentLoaded", initServiceGallery);
+
+    } else {
+
+        initServiceGallery();
+
+    }
+
+
+})();
