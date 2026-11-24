@@ -13,7 +13,7 @@
         const audio = new Audio("/assets/music/studio instrumental.mpeg");
 
         audio.loop = true;
-        audio.volume = 0.20;
+        audio.volume = 0.50;
         audio.preload = "auto";
 
         let isPlaying = false;
