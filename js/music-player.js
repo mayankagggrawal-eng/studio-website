@@ -153,6 +153,38 @@
 
     }
 
+// Keep music playing during browser Back / Forward navigation.
+window.addEventListener("popstate", function () {
+
+    if (localStorage.getItem(STORAGE_KEY) === "on" && audio.paused) {
+
+        audio.play().then(function () {
+            updateMusicButton();
+        }).catch(function (error) {
+            console.error("Music resume error:", error);
+        });
+
+    }
+
+});
+
+// Resume music when the page is restored from browser history.
+window.addEventListener("pageshow", function () {
+
+    if (localStorage.getItem(STORAGE_KEY) === "on" && audio.paused) {
+
+        audio.play().then(function () {
+            updateMusicButton();
+        }).catch(function (error) {
+            console.error("Music resume error:", error);
+        });
+
+    }
+
+});
+
+
+
     updateMusicButton();
 
 })();
