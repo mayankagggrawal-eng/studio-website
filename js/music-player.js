@@ -104,63 +104,77 @@
         window.studioMusicClickBound = true;
 
     }
+// Save playback position.
+if (!window.studioMusicTimeBound) {
 
-    // Save playback position.
-    if (!window.studioMusicTimeBound) {
+    function saveMusicTime() {
 
-        audio.addEventListener("timeupdate", function () {
-
-            if (!audio.paused) {
-                localStorage.setItem(TIME_KEY, audio.currentTime);
-            }
-
-        });
-
-        window.studioMusicTimeBound = true;
-
-    }
-
-    // Update button whenever audio state changes.
-    audio.addEventListener("play", updateMusicButton);
-    audio.addEventListener("pause", updateMusicButton);
-
-    // Restore previous music state on a fresh page load.
-    if (!window.studioMusicRestoreStarted) {
-
-        window.studioMusicRestoreStarted = true;
-
-        if (localStorage.getItem(STORAGE_KEY) === "on") {
-
-            const savedTime = Number(localStorage.getItem(TIME_KEY)) || 0;
-
-            audio.addEventListener("loadedmetadata", async function () {
-
-                if (
-                    savedTime > 0 &&
-                    Number.isFinite(savedTime) &&
-                    audio.duration > 0
-                ) {
-                    audio.currentTime = savedTime % audio.duration;
-                }
-
-                await playMusic();
-
-            }, { once: true });
-
-            audio.load();
-
+        if (
+            localStorage.getItem(STORAGE_KEY) === "on" &&
+            Number.isFinite(audio.currentTime) &&
+            audio.currentTime > 0
+        ) {
+            localStorage.setItem(TIME_KEY, audio.currentTime);
         }
 
     }
+
+    audio.addEventListener("timeupdate", saveMusicTime);
+
+    window.addEventListener("pagehide", saveMusicTime);
+    window.addEventListener("beforeunload", saveMusicTime);
+
+    document.addEventListener("visibilitychange", function () {
+
+        if (document.visibilityState === "hidden") {
+            saveMusicTime();
+        }
+
+    });
+
+    window.studioMusicTimeBound = true;
+
+}
+
+// Update button whenever audio state changes.
+audio.addEventListener("play", updateMusicButton);
+audio.addEventListener("pause", updateMusicButton);
+
+// Restore previous music state on a fresh page load.
+if (!window.studioMusicRestoreStarted) {
+
+    window.studioMusicRestoreStarted = true;
+
+    if (localStorage.getItem(STORAGE_KEY) === "on") {
+
+        const savedTime = Number(localStorage.getItem(TIME_KEY)) || 0;
+
+        audio.addEventListener("loadedmetadata", async function () {
+
+            if (
+                savedTime > 0 &&
+                Number.isFinite(savedTime) &&
+                audio.duration > 0
+            ) {
+                audio.currentTime = savedTime % audio.duration;
+            }
+
+            await playMusic();
+
+        }, { once: true });
+
+        audio.load();
+
+    }
+
+}
 
 // Keep music playing during browser Back / Forward navigation.
 window.addEventListener("popstate", function () {
 
     if (localStorage.getItem(STORAGE_KEY) === "on" && audio.paused) {
 
-        audio.play().then(function () {
-            updateMusicButton();
-        }).catch(function (error) {
+        audio.play().then(updateMusicButton).catch(function (error) {
             console.error("Music resume error:", error);
         });
 
@@ -173,9 +187,7 @@ window.addEventListener("pageshow", function () {
 
     if (localStorage.getItem(STORAGE_KEY) === "on" && audio.paused) {
 
-        audio.play().then(function () {
-            updateMusicButton();
-        }).catch(function (error) {
+        audio.play().then(updateMusicButton).catch(function (error) {
             console.error("Music resume error:", error);
         });
 
@@ -183,9 +195,6 @@ window.addEventListener("pageshow", function () {
 
 });
 
-
-
-    updateMusicButton();
+updateMusicButton();
 
 })();
-    
