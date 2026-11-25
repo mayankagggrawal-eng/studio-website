@@ -54,9 +54,10 @@
 
             img.setAttribute("fetchpriority", "low");
 
-            img.onerror = function () {
-                this.src = "../../assets/no-image.jpg";
-            };
+         img.onerror = function () {
+    this.onerror = null;
+    this.style.visibility = "hidden";
+};
 
             div.appendChild(img);
             galleryGrid.appendChild(div);
