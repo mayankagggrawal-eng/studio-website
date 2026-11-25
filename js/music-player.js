@@ -16,7 +16,8 @@
         );
 
         window.studioAudio.loop = true;
-        window.studioAudio.volume = 0.23;
+        window.studioAudio.volume = 0.12
+    ;
         window.studioAudio.preload = "auto";
 
     }
