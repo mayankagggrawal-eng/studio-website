@@ -34,22 +34,33 @@
   --card: #111111;
 }
 
-body.english-page { --accent: var(--english); }
-body.hindi-page   { --accent: var(--hindi); 
-    --card: #FFFFFF;
+/* ==========================================
+   LANGUAGE COLOR THEMES
+========================================== */
+/* ENGLISH - CLASSIC GOLD */
+body.english-page {
+    --accent: #D4AF37;
+    --gold: #D4AF37;
+    --gold-light: #F1D77A;
+    --card: #111111;
 
-    
-    
+}
 
-    --gold: #F4B400;
-    --gold-light: #FFD65A;}
-body.marathi-page { --accent: var(--marathi);     
-    
- }
+/* HINDI - ROYAL SKY BLUE */
+body.hindi-page {
+    --accent: #D4AF37;
+    --gold: #D4AF37;
+    --gold-light: #F1D77A;
+    --card: #111111;
+}
 
-
-
-
+/* MARATHI - ROYAL CRIMSON */
+body.marathi-page {
+  --accent: #D4AF37;
+    --gold: #D4AF37;
+    --gold-light: #F1D77A;
+    --card: #111111;
+}
 
 
 html {
