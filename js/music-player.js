@@ -53,26 +53,29 @@
         }
 
     }
+    
+async function playMusic() {
 
-    async function playMusic() {
+    try {
 
-        try {
+        await audio.play();
 
-            await audio.play();
+        localStorage.setItem(STORAGE_KEY, "on");
 
-            localStorage.setItem(STORAGE_KEY, "on");
+        updateMusicButton();
 
-            updateMusicButton();
+    } catch (error) {
 
-        } catch (error) {
+        console.error("Music playback error:", error);
 
-            console.error("Music playback error:", error);
+        // Keep the requested state.
+        // Do not falsely show Music On.
 
-            updateMusicButton();
-
-        }
+        updateMusicButton();
 
     }
+
+}
 
     function stopMusic() {
 

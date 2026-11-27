@@ -197,19 +197,18 @@
             window.location.href
         );
 
+// English, Hindi and Marathi pages use PJAX.
 
-        // Only English website pages use PJAX.
+const supportedLanguagePage =
+    /^\/(en|hi|mr)(\/|$)/i.test(targetURL.pathname);
 
-        if (
-            targetURL.origin !== window.location.origin ||
-            !targetURL.pathname.startsWith("/en/")
-        ) {
-
-            window.location.href = targetURL.href;
-
-            return;
-
-        }
+if (
+    targetURL.origin !== window.location.origin ||
+    !supportedLanguagePage
+) {
+    window.location.href = targetURL.href;
+    return;
+}
 
 
         // Handle same-page navigation.
@@ -472,14 +471,15 @@
         );
 
 
-        if (
-            targetURL.origin !== window.location.origin ||
-            !targetURL.pathname.startsWith("/en/")
-        ) {
+   const supportedLanguagePage =
+    /^\/(en|hi|mr)(\/|$)/i.test(targetURL.pathname);
 
-            return;
-
-        }
+if (
+    targetURL.origin !== window.location.origin ||
+    !supportedLanguagePage
+) {
+    return;
+}
 
 
         // Let same-page anchor links work normally.
