@@ -309,15 +309,41 @@
     /* ==========================================
        PJAX NAVIGATION SUPPORT
     ========================================== */
+window.studioResumeMusic = async function () {
 
-    window.addEventListener(
-        "popstate",
-        function () {
+    if (localStorage.getItem(STORAGE_KEY) !== "on") {
+        updateMusicButton();
+        return;
+    }
 
-            updateMusicButton();
+    if (audio.paused) {
+
+        try {
+
+            await audio.play();
+
+        } catch (error) {
+
+            console.error("Music resume error:", error);
 
         }
-    );
+
+    }
+
+    updateMusicButton();
+
+};
+
+
+window.addEventListener("popstate", function () {
+
+    setTimeout(function () {
+
+        window.studioResumeMusic();
+
+    }, 100);
+
+});
 
     window.addEventListener(
         "pageshow",

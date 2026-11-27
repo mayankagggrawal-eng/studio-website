@@ -347,6 +347,14 @@ if (
 
             }
 
+            // Resume background music after PJAX navigation.
+
+if (typeof window.studioResumeMusic === "function") {
+
+    window.studioResumeMusic();
+
+}
+
 
             // Update browser history.
 
